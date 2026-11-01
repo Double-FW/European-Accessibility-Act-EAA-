@@ -1,0 +1,67 @@
+schema_version: 1.0.0
+verified_on: '2026-11-01'
+decision_use: Recheck before live legal claim or baseline adoption; not a future scheduled check.
+entries:
+- id: STD-EN411
+  standard: EN 301 549
+  version: 4.1.1
+  publication: 2026-09
+  publication_status: published
+  eaa_oj_citation: not_established_by_review
+  eaa_citation_decision: null
+  eaa_effective_date: null
+  wad_oj_citation: not_established_for_this_version
+  source_ids:
+  - E02
+  - E03
+  - E04
+  - E05
+  routing:
+  - A.2 Tables A.1–A.5
+  - Annex ZB EAA relationship
+  - Annex ZA WAD relationship
+  - Annex C assessment
+  limits: No full clause catalogue; no automatic presumption or mandatory adoption inferred.
+- id: STD-EN321
+  standard: EN 301 549
+  version: 3.2.1
+  publication: 2021-03
+  publication_status: published
+  wad_oj_citation: Commission Implementing Decision EU 2021/1339 amending 2018/2048
+  eaa_oj_citation: not_established_by_review
+  source_ids:
+  - E05
+  limits: WAD citation cannot be transferred to EAA; verify any withdrawal/transition at point of use.
+- id: STD-TR
+  standard: CEN CLC ETSI TR 101551
+  version: 2026 / ETSI V2.1.1 2026-02
+  publication_status: published
+  legal_effect: guidance; no new certification duty
+  source_ids:
+  - E06
+- id: STD-WCAG
+  standard: WCAG
+  version: 2.2 Recommendation 2024-12-12
+  local_profile: A and AA proposed web baseline; not adopted by a real service
+  source_ids:
+  - E08
+automation_profile:
+  adopted_engine: null
+  state: project_verification_required
+  source_profiles:
+  - D039 4.12.1
+  - D036 4.13
+  required_before_use:
+  - actual package and lockfile
+  - effective rules and options
+  - known-failure integration evidence
+  - manual complement
+  - upgrade review
+specialist_gaps:
+- applicable hardware and closed-functionality procedures
+- real-time communication and relay assessment where applicable
+- media transmission and metadata assessment where applicable
+- non-web document and software assessment where applicable
+national_adapters:
+  state: no_jurisdiction_selected
+  required: Populate and authorise per Member State and subject before live legal conclusions.

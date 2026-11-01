@@ -1,0 +1,450 @@
+schema_version: 1.0.0
+checked_on: '2026-11-01'
+attribution: Prepared for Double FW Ltd. Source authors and publishers retain their rights.
+licence_decision: No repository-wide licence selected. Owner decision needed before public distribution.
+source_conflicts:
+- id: SC01
+  issue: Report could not access ATLF and EAA guide.
+  resolution: Recovered ATLF 1.1 and EAAG25 from user files; remote test assets still unverified.
+  evidence:
+  - ATLF11
+  - EAAG25
+  - QA-REMOTE
+- id: SC02
+  issue: AccessibleEU shorthand about current reference could imply an EAA V3.2.1 citation.
+  resolution: Treat WAD and EAA citation separately; EAA citation not established on check date.
+  evidence:
+  - E01
+  - E03
+  - E04
+  - E05
+- id: SC03
+  issue: QA engines and maturity model levels differ across sources.
+  resolution: No engine adoption and no implicit model crosswalk; project selection required.
+  evidence:
+  - D039
+  - D036
+  - D058
+  - D105
+sources:
+- id: D017
+  title: Inclusive_Digital_Service_Outcome_Dataset.md
+  authority_type: practitioner_guidance
+  location: https://github.com/Double-FW/Inclusive_and_Effective_Design/blob/14c4416398108df4ff3693277bd354f41de0481c/Inclusive_Digital_Service_Outcome_Dataset.md
+  source_version: 14c4416398108df4ff3693277bd354f41de0481c
+  sha256: d2fe9fbd5a2991a415ab06b4658aecaf50f11403c083b138b57509a61c5a8a7b
+  status: reviewed_with_constraints
+  verified_on: '2026-11-01'
+  reviewed_scope: Relevant delivery, evidence, result or measurement sections; not validation of all linked
+    claims.
+  rights: Double FW source; preserve source attribution/licence; no repository-wide licence selected.
+  active_retrieval: true
+  constraint: Method source; neither law nor a product-specific approval.
+- id: D036
+  title: Managing_Embedded_Accessibility_and_Inclusive_Design.md
+  authority_type: practitioner_guidance
+  location: https://github.com/Double-FW/Managing-Embedded-Accessibility-and-Inclusive-Design/blob/0abaf4a737bfd4c780c3de46bac3c0ad991f6a2e/Managing_Embedded_Accessibility_and_Inclusive_Design.md
+  source_version: 0abaf4a737bfd4c780c3de46bac3c0ad991f6a2e
+  sha256: 17819f4e67a0ad10343b722d4a2a5e3855630fd885967dbd5b0f3d86ce649ff5
+  status: reviewed_with_constraints
+  verified_on: '2026-11-01'
+  reviewed_scope: Relevant delivery, evidence, result or measurement sections; not validation of all linked
+    claims.
+  rights: Double FW source; preserve source attribution/licence; no repository-wide licence selected.
+  active_retrieval: true
+  constraint: Method source; neither law nor a product-specific approval.
+- id: D039
+  title: Accessibility_QA_Axe_Core_Keyboard_Test_Plan.md
+  authority_type: practitioner_guidance
+  location: https://github.com/Double-FW/Phased-Approach-to-integrating-Accessibility-into-QA/blob/f2ec12286e15233527196bb223260dd2846e53af/Accessibility_QA_Axe_Core_Keyboard_Test_Plan.md
+  source_version: f2ec12286e15233527196bb223260dd2846e53af
+  sha256: ff96c8df82ba091d490e5d922a480bef604672bf5904bbbb43a96ab1188bae53
+  status: reviewed_with_constraints
+  verified_on: '2026-11-01'
+  reviewed_scope: Relevant delivery, evidence, result or measurement sections; not validation of all linked
+    claims.
+  rights: Double FW source; preserve source attribution/licence; no repository-wide licence selected.
+  active_retrieval: true
+  constraint: Partial plan only; engine not installed/validated.
+- id: D042
+  title: Autonomous_Accessibility_Workflow_Management_Guide.md
+  authority_type: practitioner_guidance
+  location: https://github.com/Double-FW/Shift-Left_Accessibility_AI_Management/blob/27e299f281e4bb9adc78ef07760e12002e28c72a/Autonomous_Accessibility_Workflow_Management_Guide.md
+  source_version: 27e299f281e4bb9adc78ef07760e12002e28c72a
+  sha256: b3b72022dd2071be96f246edcb89400e82710a05ae8b0d0fd8eefdd8d8c96134
+  status: reviewed_with_constraints
+  verified_on: '2026-11-01'
+  reviewed_scope: Relevant delivery, evidence, result or measurement sections; not validation of all linked
+    claims.
+  rights: Double FW source; preserve source attribution/licence; no repository-wide licence selected.
+  active_retrieval: true
+  constraint: Method source; neither law nor a product-specific approval.
+- id: D045
+  title: Ethical and Inclusive Use of Data Relating to Disabled People.md
+  authority_type: practitioner_guidance
+  location: https://github.com/Double-FW/Data_Ethics_and_Disability/blob/3db809cb035e53bc1825f884f3979fdc73f793a2/Ethical%20and%20Inclusive%20Use%20of%20Data%20Relating%20to%20Disabled%20People.md
+  source_version: 3db809cb035e53bc1825f884f3979fdc73f793a2
+  sha256: ef90cdfd9f1747ee0f4956c56817bc88e77083f5fd9f6ae312be43712281a9e5
+  status: reviewed_with_constraints
+  verified_on: '2026-11-01'
+  reviewed_scope: Relevant delivery, evidence, result or measurement sections; not validation of all linked
+    claims.
+  rights: Double FW source; preserve source attribution/licence; no repository-wide licence selected.
+  active_retrieval: true
+  constraint: Use corrected privacy/recording qualifications in G04.
+- id: D047
+  title: Cognitive Design Principles.md
+  authority_type: practitioner_guidance
+  location: https://github.com/Double-FW/Cognitive-UX-Design/blob/a6d0f2751bdc67a19e7d3f9c9645a7a93303a6e4/Cognitive%20Design%20Principles.md
+  source_version: a6d0f2751bdc67a19e7d3f9c9645a7a93303a6e4
+  sha256: ba6f4599766e1f37e433efa7d7a119b00370b18c71d7dd98444f957d3dd8a9ae
+  status: reviewed_with_constraints
+  verified_on: '2026-11-01'
+  reviewed_scope: Relevant delivery, evidence, result or measurement sections; not validation of all linked
+    claims.
+  rights: Double FW source; preserve source attribution/licence; no repository-wide licence selected.
+  active_retrieval: true
+  constraint: No universal simultaneous notification rule.
+- id: D058
+  title: Accessibility RACI.md
+  authority_type: practitioner_guidance
+  location: https://github.com/Double-FW/Organisation_Governance_and_Strategy/blob/391f4f6da28f5a3afd83bebdc7ee0edd29c64bc9/Accessibility%20RACI.md
+  source_version: 391f4f6da28f5a3afd83bebdc7ee0edd29c64bc9
+  sha256: 56510aa6c5ad0e1a789928073645caad216c7f6913f3e5c36c3bc369dcda06c3
+  status: reviewed_with_constraints
+  verified_on: '2026-11-01'
+  reviewed_scope: Relevant delivery, evidence, result or measurement sections; not validation of all linked
+    claims.
+  rights: Double FW source; preserve source attribution/licence; no repository-wide licence selected.
+  active_retrieval: true
+  constraint: Separate four-level model; no implicit AI-maturity crosswalk.
+- id: D078
+  title: Accessibility_and_Inclusion_Policy_Creation_Guide.md
+  authority_type: practitioner_guidance
+  location: https://github.com/Double-FW/Inclusion-and-Accessibility-Policy/blob/145b4b2d2ae0680ca0d4c481dbbd077a31beb761/Accessibility_and_Inclusion_Policy_Creation_Guide.md
+  source_version: 145b4b2d2ae0680ca0d4c481dbbd077a31beb761
+  sha256: 2a483a08e8b078fe8d266ef356fc4cc1d32c1d84adb55eb0ea724020dc388f69
+  status: reviewed_with_constraints
+  verified_on: '2026-11-01'
+  reviewed_scope: Relevant delivery, evidence, result or measurement sections; not validation of all linked
+    claims.
+  rights: Double FW source; preserve source attribution/licence; no repository-wide licence selected.
+  active_retrieval: true
+  constraint: Method source; neither law nor a product-specific approval.
+- id: D079
+  title: Accessibility_and_Inclusion_Policy_RACI_and_Steering_Group_Guide.md
+  authority_type: practitioner_guidance
+  location: https://github.com/Double-FW/Inclusion-and-Accessibility-Policy/blob/145b4b2d2ae0680ca0d4c481dbbd077a31beb761/Accessibility_and_Inclusion_Policy_RACI_and_Steering_Group_Guide.md
+  source_version: 145b4b2d2ae0680ca0d4c481dbbd077a31beb761
+  sha256: dc6565ed290220a0775118d3ff985519c9e93e0f6b34ae54898bf5bd65edcecd
+  status: reviewed_with_constraints
+  verified_on: '2026-11-01'
+  reviewed_scope: Relevant delivery, evidence, result or measurement sections; not validation of all linked
+    claims.
+  rights: Double FW source; preserve source attribution/licence; no repository-wide licence selected.
+  active_retrieval: true
+  constraint: Method source; neither law nor a product-specific approval.
+- id: D094
+  title: schemas/claim.schema.json
+  authority_type: practitioner_guidance
+  location: https://github.com/Double-FW/Executive-and-Organisational-Commitments/blob/5e296922234a50a0c2fa4b6cc187a8745ca55d73/schemas/claim.schema.json
+  source_version: 5e296922234a50a0c2fa4b6cc187a8745ca55d73
+  sha256: cf254ee1cd116185cd09ae8d3d68e5101b103341623635e12434899d00262914
+  status: reviewed_with_constraints
+  verified_on: '2026-11-01'
+  reviewed_scope: Relevant delivery, evidence, result or measurement sections; not validation of all linked
+    claims.
+  rights: Double FW source; preserve source attribution/licence; no repository-wide licence selected.
+  active_retrieval: true
+  constraint: Use the extended local schema instead of copying approval gaps.
+- id: D100
+  title: The WCAG POUR principles reframed through emotional outcomes for branding systems.md
+  authority_type: practitioner_guidance
+  location: https://github.com/Double-FW/POUR-for-Branding-Systems-and-CX/blob/0e041d8aee75ba5585dd5c78af56f82ad9d626a8/The%20WCAG%20POUR%20principles%20reframed%20through%20emotional%20outcomes%20for%20branding%20systems.md
+  source_version: 0e041d8aee75ba5585dd5c78af56f82ad9d626a8
+  sha256: 650724349a0eba391382de8231c1769434f4d437fe211fc2c021fc2a64fe1f93
+  status: reviewed_with_constraints
+  verified_on: '2026-11-01'
+  reviewed_scope: Relevant delivery, evidence, result or measurement sections; not validation of all linked
+    claims.
+  rights: Double FW source; preserve source attribution/licence; no repository-wide licence selected.
+  active_retrieval: true
+  constraint: Method source; neither law nor a product-specific approval.
+- id: D101
+  title: policies.yaml
+  authority_type: practitioner_guidance
+  location: https://github.com/Double-FW/POUR-for-Branding-Systems-and-CX/blob/0e041d8aee75ba5585dd5c78af56f82ad9d626a8/policies.yaml
+  source_version: 0e041d8aee75ba5585dd5c78af56f82ad9d626a8
+  sha256: 2b48b2d193e179517c3c6fa04199d145d7b143b967a1ae145838404aec685ff2
+  status: reviewed_with_constraints
+  verified_on: '2026-11-01'
+  reviewed_scope: Relevant delivery, evidence, result or measurement sections; not validation of all linked
+    claims.
+  rights: Double FW source; preserve source attribution/licence; no repository-wide licence selected.
+  active_retrieval: false
+  constraint: Excluded executable severity defaults.
+- id: D104
+  title: TA Methodology.md
+  authority_type: practitioner_guidance
+  location: https://github.com/Double-FW/Task-Analysis-for-Comparative-Accessibility-Evaluation-of-Internal-Systems/blob/41d2f06c94160b53418b9eefc18bf5143efa1251/TA%20Methodology.md
+  source_version: 41d2f06c94160b53418b9eefc18bf5143efa1251
+  sha256: 64f64c1bdf6f0de0e132a217b3d7ed47e8fd6584ee70c2bac3f8996a80fdf3a3
+  status: reviewed_with_constraints
+  verified_on: '2026-11-01'
+  reviewed_scope: Relevant delivery, evidence, result or measurement sections; not validation of all linked
+    claims.
+  rights: Double FW source; preserve source attribution/licence; no repository-wide licence selected.
+  active_retrieval: true
+  constraint: Exclude universal timing tolerance bands.
+- id: D105
+  title: AI AMM.md
+  authority_type: practitioner_guidance
+  location: https://github.com/Double-FW/AI-Accessibility-Maturity-Model/blob/6ba3a9c3e9481a1edb349c0fbcfc23ecbbc6637c/AI%20AMM.md
+  source_version: 6ba3a9c3e9481a1edb349c0fbcfc23ecbbc6637c
+  sha256: e95c313b3df00f3fe38b3ff5ba69430b52f7b42072dd4fe57e67386367d821ff
+  status: reviewed_with_constraints
+  verified_on: '2026-11-01'
+  reviewed_scope: Relevant delivery, evidence, result or measurement sections; not validation of all linked
+    claims.
+  rights: Double FW source; preserve source attribution/licence; no repository-wide licence selected.
+  active_retrieval: true
+  constraint: Method source; neither law nor a product-specific approval.
+- id: A01
+  title: Accessibility Principles.docx
+  authority_type: practitioner_guidance
+  location: https://chatgpt.com/library?file_id=libfile_732dedf716148191a1d992b1da76ef41&account_id=personal
+  source_version: original supplied bytes
+  sha256: a1df09f27fcd17c5a4d9a9cdafcb53d97a564cf5fda2851bc581068c064668f8
+  status: rewritten_in_G02
+  verified_on: '2026-11-01'
+  reviewed_scope: Original text reviewed; original file unchanged.
+  rights: Supplied Double FW material; corrected explanatory synthesis only.
+  active_retrieval: false
+  constraint: Do not ingest the old wording as an approved rule; use the new guides.
+- id: A02
+  title: EAA Annex 1 - WCAG Mapping.docx
+  authority_type: practitioner_guidance
+  location: https://chatgpt.com/library?file_id=libfile_526bcb94798c819185b8a8bd13f21b3e&account_id=personal
+  source_version: original supplied bytes
+  sha256: 14bebd102ad593be5caf73c0fbe42ede9495c9317e45f7cd33429846fe924719
+  status: replaced_by_scoped_mapping_method
+  verified_on: '2026-11-01'
+  reviewed_scope: Original text reviewed; original file unchanged.
+  rights: Supplied Double FW material; corrected explanatory synthesis only.
+  active_retrieval: false
+  constraint: Do not ingest the old wording as an approved rule; use the new guides.
+- id: A03
+  title: EAA User Groups.docx
+  authority_type: practitioner_guidance
+  location: https://chatgpt.com/library?file_id=libfile_3d684f01d058819188dae5cbd1c53f44&account_id=personal
+  source_version: original supplied bytes
+  sha256: 3d30f83058d030e4baa4d1e28d849683f4cd55b43c24e54ec6d44501be0ea2a6
+  status: replaced_by_complete_lenses
+  verified_on: '2026-11-01'
+  reviewed_scope: Original text reviewed; original file unchanged.
+  rights: Supplied Double FW material; corrected explanatory synthesis only.
+  active_retrieval: false
+  constraint: Do not ingest the old wording as an approved rule; use the new guides.
+- id: A04
+  title: European_Accessibility_Act_How_to_Respond(1).md
+  authority_type: practitioner_guidance
+  location: https://chatgpt.com/library?file_id=libfile_c64e9cd4f5608191b8fff629169e2095&account_id=personal
+  source_version: original supplied bytes
+  sha256: a8b77351aa9ef520caa092de546e69af5ad720d732c159cd26867db5233d86d0
+  status: commentary_only
+  verified_on: '2026-11-01'
+  reviewed_scope: Original text reviewed; original file unchanged.
+  rights: Supplied Double FW material; corrected explanatory synthesis only.
+  active_retrieval: false
+  constraint: Do not ingest the old wording as an approved rule; use the new guides.
+- id: A05
+  title: EAA_Scope_and_Applicability_Gate(1).md
+  authority_type: practitioner_guidance
+  location: https://chatgpt.com/library?file_id=libfile_40a796f253dc81919d1be651568cb09f&account_id=personal
+  source_version: original supplied bytes
+  sha256: e80ad44ed898f4ff0dedbe35d5f7dae42bcc31b32773634a43bfc08dda48916c
+  status: preferred_remediated_base
+  verified_on: '2026-11-01'
+  reviewed_scope: Original text reviewed; original file unchanged.
+  rights: Supplied Double FW material; corrected explanatory synthesis only.
+  active_retrieval: true
+  constraint: Do not ingest the old wording as an approved rule; use the new guides.
+- id: A06
+  title: EAA_Evidence_and_Conformity_Record_Model(1).md
+  authority_type: practitioner_guidance
+  location: https://chatgpt.com/library?file_id=libfile_f97ab3d63934819197958194779fb8c2&account_id=personal
+  source_version: original supplied bytes
+  sha256: d25b2d1774c883295eb1767aeeb35f1e58b333ce53797de03a30dc6df0d7896c
+  status: extended_in_G05
+  verified_on: '2026-11-01'
+  reviewed_scope: Original text reviewed; original file unchanged.
+  rights: Supplied Double FW material; corrected explanatory synthesis only.
+  active_retrieval: true
+  constraint: Do not ingest the old wording as an approved rule; use the new guides.
+- id: A07
+  title: EAA_Scope_and_Applicability_Gate(2).md
+  authority_type: practitioner_guidance
+  location: https://chatgpt.com/library?file_id=libfile_2cf869c0c9608191adf0593b9cfbb246&account_id=personal
+  source_version: original supplied bytes
+  sha256: 7af14a7847c86e014f0d83fa637fa853b06b1b2aa0ff40bfd8922229003a1d9d
+  status: superseded_by_A05
+  verified_on: '2026-11-01'
+  reviewed_scope: Original text reviewed; original file unchanged.
+  rights: Supplied Double FW material; corrected explanatory synthesis only.
+  active_retrieval: false
+  constraint: Do not ingest the old wording as an approved rule; use the new guides.
+- id: A08
+  title: EAA User Groups(1).docx
+  authority_type: practitioner_guidance
+  location: https://chatgpt.com/library?file_id=libfile_1876344017fc81919a86ac84d8599544&account_id=personal
+  source_version: original supplied bytes
+  sha256: 3d30f83058d030e4baa4d1e28d849683f4cd55b43c24e54ec6d44501be0ea2a6
+  status: duplicate_of_A03
+  verified_on: '2026-11-01'
+  reviewed_scope: Original text reviewed; original file unchanged.
+  rights: Supplied Double FW material; corrected explanatory synthesis only.
+  active_retrieval: false
+  constraint: Do not ingest the old wording as an approved rule; use the new guides.
+- id: A09
+  title: EAA Annex 1 - WCAG Mapping(1).docx
+  authority_type: practitioner_guidance
+  location: https://chatgpt.com/library?file_id=libfile_1fa03a393bd88191863a553e020e9de6&account_id=personal
+  source_version: original supplied bytes
+  sha256: 14bebd102ad593be5caf73c0fbe42ede9495c9317e45f7cd33429846fe924719
+  status: duplicate_of_A02
+  verified_on: '2026-11-01'
+  reviewed_scope: Original text reviewed; original file unchanged.
+  rights: Supplied Double FW material; corrected explanatory synthesis only.
+  active_retrieval: false
+  constraint: Do not ingest the old wording as an approved rule; use the new guides.
+- id: E01
+  title: Directive EU 2019/882
+  authority_type: law
+  location: https://eur-lex.europa.eu/eli/dir/2019/882/oj
+  source_version: 2019 adopted text
+  status: current_source_checked
+  verified_on: '2026-11-01'
+  reviewed_scope: Provisions cited by the guides; no exhaustive clause or national-law audit.
+  rights: Link and original explanation; no full third-party document redistributed.
+  active_retrieval: true
+  constraint: Source currency and applicability require review at decision time.
+  readable_official_copy: https://www.legislation.gov.uk/eudr/2019/882/pdfs/eudr_20190882_adopted_en.pdf
+  verification_note: EUR-Lex direct opens encountered bot/access protection; official published Directive text
+    hosted by legislation.gov.uk read. Not a national implementing-law adapter.
+- id: E02
+  title: EN 301 549
+  authority_type: standard
+  location: https://www.etsi.org/deliver/etsi_en/301500_301599/301549/04.01.01_60/en_301549v040101p.pdf
+  source_version: 4.1.1 2026-09
+  status: current_source_checked
+  verified_on: '2026-11-01'
+  reviewed_scope: Provisions cited by the guides; no exhaustive clause or national-law audit.
+  rights: Link and original explanation; no full third-party document redistributed.
+  active_retrieval: true
+  constraint: Source currency and applicability require review at decision time.
+- id: E03
+  title: AccessibleEU standards update
+  authority_type: official_guidance
+  location: https://accessible-eu-centre.ec.europa.eu/content-corner/news/european-accessibility-standard-en-301-549-has-been-updated-2026-09-07_en
+  source_version: '2026-09-07'
+  status: current_source_checked
+  verified_on: '2026-11-01'
+  reviewed_scope: Provisions cited by the guides; no exhaustive clause or national-law audit.
+  rights: Link and original explanation; no full third-party document redistributed.
+  active_retrieval: true
+  constraint: Source currency and applicability require review at decision time.
+- id: E04
+  title: Commission harmonised standards index
+  authority_type: official_register
+  location: https://single-market-economy.ec.europa.eu/single-market/goods/european-standards/harmonised-standards_en
+  source_version: checked 2026-11-01
+  status: current_source_checked
+  verified_on: '2026-11-01'
+  reviewed_scope: Provisions cited by the guides; no exhaustive clause or national-law audit.
+  rights: Link and original explanation; no full third-party document redistributed.
+  active_retrieval: true
+  constraint: Source currency and applicability require review at decision time.
+- id: E05
+  title: Commission WAD references
+  authority_type: official_register
+  location: https://single-market-economy.ec.europa.eu/single-market/goods/european-standards/harmonised-standards/accessibility-websites-and-mobile-applications_en
+  source_version: checked 2026-11-01
+  status: current_source_checked
+  verified_on: '2026-11-01'
+  reviewed_scope: Provisions cited by the guides; no exhaustive clause or national-law audit.
+  rights: Link and original explanation; no full third-party document redistributed.
+  active_retrieval: true
+  constraint: Source currency and applicability require review at decision time.
+- id: E06
+  title: CEN CLC ETSI TR 101551
+  authority_type: technical_report
+  location: https://www.etsi.org/deliver/etsi_tr/101500_101599/101551/02.01.01_60/tr_101551v020101p.pdf
+  source_version: 2.1.1 2026-02
+  status: current_source_checked
+  verified_on: '2026-11-01'
+  reviewed_scope: Provisions cited by the guides; no exhaustive clause or national-law audit.
+  rights: Link and original explanation; no full third-party document redistributed.
+  active_retrieval: true
+  constraint: Source currency and applicability require review at decision time.
+- id: E08
+  title: WCAG 2.2
+  authority_type: standard
+  location: https://www.w3.org/TR/WCAG22/
+  source_version: W3C Recommendation 2024-12-12
+  status: current_source_checked
+  verified_on: '2026-11-01'
+  reviewed_scope: Provisions cited by the guides; no exhaustive clause or national-law audit.
+  rights: Link and original explanation; no full third-party document redistributed.
+  active_retrieval: true
+  constraint: Source currency and applicability require review at decision time.
+- id: ATLF11
+  title: Accessibility Test-Led Delivery Framework 1.1
+  authority_type: practitioner_guidance
+  location: https://chatgpt.com/library?file_id=libfile_d93592f0a83c819193949def825a56d0&account_id=personal
+  source_version: 1.1 2026-09-20
+  sha256: 1db4a85ff82de779d0866cb6cdfc9a00ceaf986f5e9a8f7abbef4074f1c0237e
+  status: recovered_copy_reviewed
+  verified_on: '2026-11-01'
+  reviewed_scope: Full recovered framework; seven result values verified; underlying test assets not retrieved.
+  rights: Supplied Double FW framework; preserve attribution.
+  active_retrieval: true
+  constraint: Remote test libraries remain inaccessible; counts are not adopted as coverage.
+- id: EAAG25
+  title: Guide to the European Accessibility Act 2025
+  authority_type: commentary
+  location: https://chatgpt.com/library?file_id=libfile_2664f26e8dec8191a1608034a25c995a&account_id=personal
+  source_version: 1.0-semantic
+  status: recovered_context_only
+  verified_on: '2026-11-01'
+  reviewed_scope: Structure and source/authority safeguards; not primary legal authority.
+  rights: Supplied Double FW material.
+  active_retrieval: false
+  constraint: Its four explanatory layers are not substituted for the three canonical layers.
+- id: QA-REMOTE
+  title: QA Accessibility Testing live repository
+  authority_type: dependency
+  location: https://github.com/Double-FW/QA_Accessibility_Testing
+  source_version: unknown
+  status: inaccessible
+  verified_on: '2026-11-01'
+  reviewed_scope: Access attempt returned 404.
+  rights: Unknown until source accessible.
+  active_retrieval: false
+  constraint: Do not fabricate exact test procedures.
+- id: REVIEW
+  title: Stage 1 source review
+  authority_type: remediation_specification
+  location: https://chatgpt.com/library?file_id=libfile_e6e623c0b7448191b0f8cd71615ad4bc&account_id=personal
+  source_version: 1.0 2026-11-01
+  status: reviewed
+  verified_on: '2026-11-01'
+  reviewed_scope: Full report, all R01–R36; not certification of the corpus.
+  rights: Supplied project report.
+  active_retrieval: true
+  constraint: Recovery of ATLF and missing guide updates the report; live dependencies remain unresolved.
+historical_dataset:
+  id: HIST-EAA
+  source_report_id: D010
+  status: superseded_redirect_only
+  active_retrieval: false
+  replacement: D017

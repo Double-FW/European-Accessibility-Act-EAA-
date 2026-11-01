@@ -1,0 +1,330 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "as_of": {
+      "type": "string",
+      "format": "date"
+    },
+    "implementation_status": {
+      "const": "definitions_and_validation_only"
+    },
+    "states": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "transitions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "from": {
+            "type": "string",
+            "minLength": 1
+          },
+          "to": {
+            "type": "string",
+            "minLength": 1
+          },
+          "condition": {
+            "type": "string",
+            "minLength": 1
+          },
+          "requires_evidence": {
+            "type": "boolean"
+          },
+          "requires_human_approval": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "from",
+          "to",
+          "condition",
+          "requires_evidence",
+          "requires_human_approval"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "result_adapter": {
+      "type": "object"
+    },
+    "metrics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "numerator": {
+            "type": "string",
+            "minLength": 1
+          },
+          "denominator": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reference": {
+            "type": "string",
+            "minLength": 1
+          },
+          "interpretation": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "numerator",
+          "denominator",
+          "reference",
+          "interpretation"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "workflows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^WF[0-9]{2}$"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "guide_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "trigger": {
+            "type": "string",
+            "minLength": 1
+          },
+          "prerequisites": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "input_record_types": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "source",
+                "jurisdiction",
+                "applicability",
+                "requirement",
+                "mapping",
+                "test_execution",
+                "evidence",
+                "outcome_finding",
+                "issue",
+                "legal_limitation",
+                "delegation",
+                "approval",
+                "conformity_conclusion",
+                "public_claim",
+                "monitoring_event"
+              ]
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "output_record_types": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "source",
+                "jurisdiction",
+                "applicability",
+                "requirement",
+                "mapping",
+                "test_execution",
+                "evidence",
+                "outcome_finding",
+                "issue",
+                "legal_limitation",
+                "delegation",
+                "approval",
+                "conformity_conclusion",
+                "public_claim",
+                "monitoring_event"
+              ]
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "integration_boundary": {
+            "type": "string",
+            "minLength": 1
+          },
+          "steps": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "action": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "depends_on": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "minItems": 0,
+                  "uniqueItems": true
+                },
+                "responsible_function": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "accountable_human_role": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "permitted_automation": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "minItems": 0,
+                  "uniqueItems": true
+                },
+                "approval_required": {
+                  "type": "boolean"
+                },
+                "output_record_types": {
+                  "type": "array",
+                  "items": {
+                    "enum": [
+                      "source",
+                      "jurisdiction",
+                      "applicability",
+                      "requirement",
+                      "mapping",
+                      "test_execution",
+                      "evidence",
+                      "outcome_finding",
+                      "issue",
+                      "legal_limitation",
+                      "delegation",
+                      "approval",
+                      "conformity_conclusion",
+                      "public_claim",
+                      "monitoring_event"
+                    ]
+                  },
+                  "minItems": 1,
+                  "uniqueItems": true
+                },
+                "completion_evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "minItems": 1,
+                  "uniqueItems": true
+                },
+                "on_blocked": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "on_failure": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "id",
+                "action",
+                "depends_on",
+                "responsible_function",
+                "accountable_human_role",
+                "permitted_automation",
+                "approval_required",
+                "output_record_types",
+                "completion_evidence",
+                "on_blocked",
+                "on_failure"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "retry_rule": {
+            "type": "string",
+            "minLength": 1
+          },
+          "review_triggers": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "guide_id",
+          "trigger",
+          "prerequisites",
+          "input_record_types",
+          "output_record_types",
+          "integration_boundary",
+          "steps",
+          "retry_rule",
+          "review_triggers"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 10,
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "schema_version",
+    "as_of",
+    "implementation_status",
+    "states",
+    "transitions",
+    "result_adapter",
+    "metrics",
+    "workflows"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Workflow registry"
+}

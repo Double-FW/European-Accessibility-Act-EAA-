@@ -1,0 +1,206 @@
+schema_version: 1.0.0
+retrieval_rule: Retrieve relevant approved/adopted material only for operational decisions; these draft guides
+  are usable for preparation and validation.
+documents:
+- document_id: G01
+  version: 1.0.0
+  status: draft_for_adoption
+  authority_type: practitioner_guidance
+  review_date: '2026-11-01'
+  source_ids:
+  - A05
+  - E01
+  - ATLF11
+  prerequisites:
+  - service_facts
+  - jurisdiction_facts
+  output_record_types:
+  - jurisdiction
+  - applicability
+  - legal_limitation
+  path: guides/01-scope-and-applicability.md
+  anchors:
+  - purpose-and-trigger
+  - inputs-and-boundaries
+  - article-2-routing
+  - exclusions-dates-and-limitations
+  - annex-routing-and-decision
+  tasks:
+  - scope
+  - jurisdiction
+  - limitations
+- document_id: G02
+  version: 1.0.0
+  status: draft_for_adoption
+  authority_type: practitioner_guidance
+  review_date: '2026-11-01'
+  source_ids:
+  - A02
+  - A01
+  - E01
+  - E02
+  - E04
+  - E08
+  - D039
+  - ATLF11
+  prerequisites:
+  - approved_applicability
+  - capability_inventory
+  output_record_types:
+  - requirement
+  - mapping
+  - test_execution
+  - evidence
+  path: guides/02-requirements-and-assessment.md
+  anchors:
+  - purpose-inputs-and-accountability
+  - select-and-version-the-baseline
+  - correct-the-mapping-approach
+  - plan-and-execute-complementary-methods
+  - outputs-and-next-decision
+  tasks:
+  - requirements
+  - mapping
+  - assessment
+- document_id: G03
+  version: 1.0.0
+  status: draft_for_adoption
+  authority_type: practitioner_guidance
+  review_date: '2026-11-01'
+  source_ids:
+  - D036
+  - D042
+  - ATLF11
+  - E06
+  - D047
+  - D104
+  prerequisites:
+  - service_facts
+  - funded_ownership
+  output_record_types:
+  - requirement
+  - mapping
+  - delegation
+  - evidence
+  - issue
+  path: guides/03-delivery-and-procurement.md
+  anchors:
+  - purpose-trigger-and-inputs
+  - make-requirements-survive-delivery
+  - human-responsibilities
+  - procure-evidence-not-promises
+  - release-and-handover
+  - outputs-and-next-workflow
+  tasks:
+  - delivery
+  - procurement
+  - RACI
+- document_id: G04
+  version: 1.0.0
+  status: draft_for_adoption
+  authority_type: practitioner_guidance
+  review_date: '2026-11-01'
+  source_ids:
+  - D017
+  - D042
+  - D045
+  - D047
+  - D104
+  - E01
+  prerequisites:
+  - research_question
+  - data_permissions
+  - service_facts
+  output_record_types:
+  - evidence
+  - outcome_finding
+  - issue
+  path: guides/04-customer-outcomes-and-research.md
+  anchors:
+  - purpose-trigger-and-inputs
+  - functional-lenses-and-contextual-needs
+  - collect-complementary-evidence
+  - measures-and-interpretation
+  - findings-outputs-and-next-workflow
+  tasks:
+  - research
+  - outcomes
+  - satisfaction
+- document_id: G05
+  version: 1.0.0
+  status: draft_for_adoption
+  authority_type: practitioner_guidance
+  review_date: '2026-11-01'
+  source_ids:
+  - A06
+  - A05
+  - ATLF11
+  - E01
+  - D017
+  prerequisites:
+  - approved_applicability
+  - current_evidence_set
+  output_record_types:
+  - evidence
+  - conformity_conclusion
+  - approval
+  - public_claim
+  path: guides/05-evidence-conformity-and-claims.md
+  anchors:
+  - purpose-trigger-and-authority
+  - build-a-reconstructable-chain
+  - reach-a-bounded-requirement-conclusion
+  - distinguish-decision-routes
+  - product-service-and-claim-records
+  - stop-conditions-outputs-and-handoff
+  tasks:
+  - conformity
+  - claims
+  - evidence
+- document_id: G06
+  version: 1.0.0
+  status: draft_for_adoption
+  authority_type: practitioner_guidance
+  review_date: '2026-11-01'
+  source_ids:
+  - D042
+  - D036
+  - ATLF11
+  - A06
+  - D105
+  - D058
+  prerequisites:
+  - service_inventory
+  - operational_ownership
+  output_record_types:
+  - monitoring_event
+  - issue
+  - test_execution
+  - evidence
+  - conformity_conclusion
+  - public_claim
+  path: guides/06-monitoring-and-corrective-action.md
+  anchors:
+  - purpose-trigger-and-ownership
+  - make-monitoring-decision-relevant
+  - triage-and-protect-people
+  - correct-causes-and-verify-outcomes
+  - measure-process-and-ai-accuracy
+  - pilot-evidence-and-next-workflow
+  tasks:
+  - monitoring
+  - correction
+  - accuracy
+entrypoints:
+- README.md
+- AGENTS.md
+- guides/README.md
+- records/README.md
+- validation/README.md
+historical_exclusions:
+- A07
+- A08
+- A09
+- D010 historical dataset; redirect only
+record_schema: records/record.schema.json
+workflows: workflows/workflows.yaml

@@ -1,0 +1,823 @@
+schema_version: 1.0.0
+synthetic: true
+purpose: Developer simulation; all people, law adapters, observations and approvals are fictional.
+as_of: '2026-11-01'
+records:
+- id: EV-GOV
+  kind: evidence
+  schema_version: 1.0.0
+  version: 1.0.0
+  status: recorded
+  scope:
+    subject: SIM booking keyboard-control demonstration only
+    release: sim-2
+    territories:
+    - SIM-JURISDICTION
+    channels:
+    - sim-web
+  source_ids:
+  - E01
+  - ATLF11
+  owner: Synthetic responsible owner
+  created_on: '2026-11-01'
+  limitations:
+  - Synthetic developer fixture; no real user, national-law adapter or operational approval.
+  relationships: []
+  evidence_refs: []
+  synthetic: true
+  review_date: '2026-12-01'
+  data:
+    category: approval_basis
+    observation: Synthetic governance evidence for demonstration only.
+    method: constructed fixture
+    environment: offline developer example
+    location: examples/synthetic-service-cycle.yaml#EV-GOV
+    supports_refs: []
+    contradicts_refs: []
+    does_not_establish:
+    - Any real conformity or human authorisation
+    authenticity: synthetic
+    access: public synthetic only
+    retention: retain with fixture version
+    current: true
+- id: JUR-SIM
+  kind: jurisdiction
+  schema_version: 1.0.0
+  version: 1.0.0
+  status: approved
+  scope:
+    subject: SIM booking keyboard-control demonstration only
+    release: sim-2
+    territories:
+    - SIM-JURISDICTION
+    channels:
+    - sim-web
+  source_ids:
+  - E01
+  - ATLF11
+  owner: Synthetic responsible owner
+  created_on: '2026-11-01'
+  limitations:
+  - Synthetic developer fixture; no real user, national-law adapter or operational approval.
+  relationships: []
+  evidence_refs:
+  - EV-GOV
+  synthetic: true
+  review_date: '2026-12-01'
+  data:
+    member_state: SIM-JURISDICTION fictional
+    national_law_refs:
+    - SIM national-law text, fictional fixture only
+    competent_authority: Synthetic legal authority
+    application_dates:
+    - Synthetic date only; no actual national adapter
+    duties:
+    - Fixture has one simulated requirement; never use for a real service
+  approval_ref: AP-JUR-SIM
+- id: AP-JUR-SIM
+  kind: approval
+  schema_version: 1.0.0
+  version: 1.0.0
+  status: recorded
+  scope:
+    subject: SIM booking keyboard-control demonstration only
+    release: sim-2
+    territories:
+    - SIM-JURISDICTION
+    channels:
+    - sim-web
+  source_ids:
+  - E01
+  - ATLF11
+  owner: Synthetic responsible owner
+  created_on: '2026-11-01'
+  limitations:
+  - Synthetic developer fixture; no real user, national-law adapter or operational approval.
+  relationships: []
+  evidence_refs:
+  - EV-GOV
+  synthetic: true
+  review_date: '2026-12-01'
+  data:
+    human_approver: Synthetic human approver for fixture only
+    authority_basis: Synthetic fixture authority; cannot authorise live activity
+    target_ref: JUR-SIM
+    target_version: 1.0.0
+    approved_scope:
+      subject: SIM booking keyboard-control demonstration only
+      release: sim-2
+      territories:
+      - SIM-JURISDICTION
+      channels:
+      - sim-web
+    approved_on: '2026-11-01'
+    valid_until: '2026-12-01'
+    artifact_hash: null
+    delegation_ref: null
+- id: SCOPE-SIM
+  kind: applicability
+  schema_version: 1.0.0
+  version: 1.0.0
+  status: approved
+  scope:
+    subject: SIM booking keyboard-control demonstration only
+    release: sim-2
+    territories:
+    - SIM-JURISDICTION
+    channels:
+    - sim-web
+  source_ids:
+  - E01
+  - ATLF11
+  owner: Synthetic responsible owner
+  created_on: '2026-11-01'
+  limitations:
+  - Synthetic developer fixture; no real user, national-law adapter or operational approval.
+  relationships: []
+  evidence_refs:
+  - EV-GOV
+  synthetic: true
+  review_date: '2026-12-01'
+  data:
+    scope_decision: in scope
+    legal_limitation_status: none identified
+    operator_roles:
+    - service_provider
+    category: SIM e-commerce routing example
+    jurisdiction_refs:
+    - JUR-SIM
+    national_law_refs:
+    - SIM national-law text, fictional fixture only
+    annex_routes:
+    - Annex I III(c), scoped synthetic keyboard example
+    included:
+    - one simulated booking control
+    excluded:
+    - all other service functions and all real jurisdictions
+    legal_limitation_refs: []
+    rationale: Exercises record flow only; cannot establish the legal scope of a real service.
+  approval_ref: AP-SCOPE-SIM
+- id: AP-SCOPE-SIM
+  kind: approval
+  schema_version: 1.0.0
+  version: 1.0.0
+  status: recorded
+  scope:
+    subject: SIM booking keyboard-control demonstration only
+    release: sim-2
+    territories:
+    - SIM-JURISDICTION
+    channels:
+    - sim-web
+  source_ids:
+  - E01
+  - ATLF11
+  owner: Synthetic responsible owner
+  created_on: '2026-11-01'
+  limitations:
+  - Synthetic developer fixture; no real user, national-law adapter or operational approval.
+  relationships: []
+  evidence_refs:
+  - EV-GOV
+  synthetic: true
+  review_date: '2026-12-01'
+  data:
+    human_approver: Synthetic human approver for fixture only
+    authority_basis: Synthetic fixture authority; cannot authorise live activity
+    target_ref: SCOPE-SIM
+    target_version: 1.0.0
+    approved_scope:
+      subject: SIM booking keyboard-control demonstration only
+      release: sim-2
+      territories:
+      - SIM-JURISDICTION
+      channels:
+      - sim-web
+    approved_on: '2026-11-01'
+    valid_until: '2026-12-01'
+    artifact_hash: null
+    delegation_ref: null
+- id: REQ-KEYBOARD
+  kind: requirement
+  schema_version: 1.0.0
+  version: 1.0.0
+  status: recorded
+  scope:
+    subject: SIM booking keyboard-control demonstration only
+    release: sim-2
+    territories:
+    - SIM-JURISDICTION
+    channels:
+    - sim-web
+  source_ids:
+  - E01
+  - ATLF11
+  owner: Synthetic responsible owner
+  created_on: '2026-11-01'
+  limitations:
+  - Synthetic developer fixture; no real user, national-law adapter or operational approval.
+  relationships: []
+  evidence_refs: []
+  synthetic: true
+  review_date: '2026-12-01'
+  data:
+    legal_clause: Directive 2019/882 Annex I III(c), illustrative scoped interpretation
+    authority_type: interpretation
+    interpretation: Simulated booking control can be activated through keyboard input.
+    applicability_ref: SCOPE-SIM
+    acceptance_conditions:
+    - Correct simulated booking end state reached using keyboard only
+    assessment_methods:
+    - manual keyboard task inspection
+    evidence_required:
+    - state trace
+    - expected/actual end state
+    mandatory: true
+- id: MAP-KEYBOARD
+  kind: mapping
+  schema_version: 1.0.0
+  version: 1.0.0
+  status: recorded
+  scope:
+    subject: SIM booking keyboard-control demonstration only
+    release: sim-2
+    territories:
+    - SIM-JURISDICTION
+    channels:
+    - sim-web
+  source_ids:
+  - E01
+  - ATLF11
+  owner: Synthetic responsible owner
+  created_on: '2026-11-01'
+  limitations:
+  - Synthetic developer fixture; no real user, national-law adapter or operational approval.
+  relationships: []
+  evidence_refs: []
+  synthetic: true
+  review_date: '2026-12-01'
+  data:
+    requirement_ref: REQ-KEYBOARD
+    source_id: E02
+    source_version: EN 301 549 V4.1.1 2026-09
+    clause: 9.2.1.1; C.9.2.1.1
+    applicability_rationale: Synthetic web-page keyboard function
+    relationship: partially_supports
+    coverage_limits:
+    - Not full III(c) or complete-service conformity
+    assessment_method: manual keyboard inspection with declared scope
+    evidence_required:
+    - manual trace and end state
+- id: EV-FAIL
+  kind: evidence
+  schema_version: 1.0.0
+  version: 1.0.0
+  status: recorded
+  scope:
+    subject: SIM booking keyboard-control demonstration only
+    release: sim-2
+    territories:
+    - SIM-JURISDICTION
+    channels:
+    - sim-web
+  source_ids:
+  - E01
+  - ATLF11
+  owner: Synthetic responsible owner
+  created_on: '2026-11-01'
+  limitations:
+  - Synthetic developer fixture; no real user, national-law adapter or operational approval.
+  relationships: []
+  evidence_refs: []
+  synthetic: true
+  review_date: '2026-12-01'
+  data:
+    category: manual
+    observation: 'Synthetic first build: keyboard activation unavailable.'
+    method: constructed manual trace
+    environment: SIM browser and OS, not real execution
+    location: examples/synthetic-service-cycle.yaml#EV-FAIL
+    supports_refs:
+    - REQ-KEYBOARD
+    contradicts_refs: []
+    does_not_establish:
+    - Real implementation accessibility
+    - Full EAA conformity
+    authenticity: synthetic
+    access: public synthetic only
+    retention: fixture version history
+    current: true
+- id: EV-PASS
+  kind: evidence
+  schema_version: 1.0.0
+  version: 1.0.0
+  status: recorded
+  scope:
+    subject: SIM booking keyboard-control demonstration only
+    release: sim-2
+    territories:
+    - SIM-JURISDICTION
+    channels:
+    - sim-web
+  source_ids:
+  - E01
+  - ATLF11
+  owner: Synthetic responsible owner
+  created_on: '2026-11-01'
+  limitations:
+  - Synthetic developer fixture; no real user, national-law adapter or operational approval.
+  relationships: []
+  evidence_refs: []
+  synthetic: true
+  review_date: '2026-12-01'
+  data:
+    category: manual
+    observation: 'Synthetic second build: keyboard activation and correct end state observed.'
+    method: constructed manual trace
+    environment: SIM browser and OS, not real execution
+    location: examples/synthetic-service-cycle.yaml#EV-PASS
+    supports_refs:
+    - REQ-KEYBOARD
+    contradicts_refs: []
+    does_not_establish:
+    - Real implementation accessibility
+    - Full EAA conformity
+    authenticity: synthetic
+    access: public synthetic only
+    retention: fixture version history
+    current: true
+- id: TEST-FAIL
+  kind: test_execution
+  schema_version: 1.0.0
+  version: 1.0.0
+  status: recorded
+  scope:
+    subject: SIM booking keyboard-control demonstration only
+    release: sim-1
+    territories:
+    - SIM-JURISDICTION
+    channels:
+    - sim-web
+  source_ids:
+  - E01
+  - ATLF11
+  owner: Synthetic responsible owner
+  created_on: '2026-11-01'
+  limitations:
+  - Synthetic developer fixture; no real user, national-law adapter or operational approval.
+  relationships: []
+  evidence_refs:
+  - EV-FAIL
+  synthetic: true
+  review_date: '2026-12-01'
+  data:
+    requirement_ref: REQ-KEYBOARD
+    procedure_ref: MAP-KEYBOARD
+    method: manual keyboard inspection
+    environment: SIM browser/OS; no actual browser execution
+    precondition_met: true
+    assumptions_met: true
+    source_vocabulary: ATLF-1.1
+    source_result: Fail
+    normalised_result: Fail
+    adapter_rationale: Identity mapping in same vocabulary
+    observation: Fail in constructed example
+    cause: implementation fault
+    coverage_complete: true
+- id: TEST-PASS
+  kind: test_execution
+  schema_version: 1.0.0
+  version: 1.0.0
+  status: recorded
+  scope:
+    subject: SIM booking keyboard-control demonstration only
+    release: sim-2
+    territories:
+    - SIM-JURISDICTION
+    channels:
+    - sim-web
+  source_ids:
+  - E01
+  - ATLF11
+  owner: Synthetic responsible owner
+  created_on: '2026-11-01'
+  limitations:
+  - Synthetic developer fixture; no real user, national-law adapter or operational approval.
+  relationships:
+  - relation: retest_of
+    target: TEST-FAIL
+  evidence_refs:
+  - EV-PASS
+  synthetic: true
+  review_date: '2026-12-01'
+  data:
+    requirement_ref: REQ-KEYBOARD
+    procedure_ref: MAP-KEYBOARD
+    method: manual keyboard inspection
+    environment: SIM browser/OS; no actual browser execution
+    precondition_met: true
+    assumptions_met: true
+    source_vocabulary: ATLF-1.1
+    source_result: Pass
+    normalised_result: Pass
+    adapter_rationale: Identity mapping in same vocabulary
+    observation: Pass in constructed example
+    cause: ''
+    coverage_complete: true
+- id: ISSUE-SIM
+  kind: issue
+  schema_version: 1.0.0
+  version: 1.0.0
+  status: complete
+  scope:
+    subject: SIM booking keyboard-control demonstration only
+    release: sim-2
+    territories:
+    - SIM-JURISDICTION
+    channels:
+    - sim-web
+  source_ids:
+  - E01
+  - ATLF11
+  owner: Synthetic responsible owner
+  created_on: '2026-11-01'
+  limitations:
+  - Synthetic developer fixture; no real user, national-law adapter or operational approval.
+  relationships: []
+  evidence_refs:
+  - EV-FAIL
+  - EV-PASS
+  synthetic: true
+  review_date: '2026-12-01'
+  data:
+    category: defect
+    requirement_refs:
+    - REQ-KEYBOARD
+    impact: Synthetic keyboard users blocked
+    priority_rationale: Essential task cannot be completed
+    action: Repair activation handler in simulated second build
+    due_on: '2026-11-01'
+    compensating_action: No live users; simulation only
+    monitoring: Recheck after any control change
+    retest_refs:
+    - TEST-PASS
+    resolution: verified_corrected
+    review_on: '2026-12-01'
+    expires_on: null
+- id: OUTCOME-SIM
+  kind: outcome_finding
+  schema_version: 1.0.0
+  version: 1.0.0
+  status: recorded
+  scope:
+    subject: SIM booking keyboard-control demonstration only
+    release: sim-2
+    territories:
+    - SIM-JURISDICTION
+    channels:
+    - sim-web
+  source_ids:
+  - E01
+  - ATLF11
+  owner: Synthetic responsible owner
+  created_on: '2026-11-01'
+  limitations:
+  - Synthetic developer fixture; no real user, national-law adapter or operational approval.
+  relationships: []
+  evidence_refs:
+  - EV-PASS
+  synthetic: true
+  review_date: '2026-12-01'
+  data:
+    outcome_id: IDSO-09
+    finding: supported
+    observed_or_reported: synthetic
+    population_context: No real participants; synthetic task only
+    measures:
+    - id: MEASURE-SIM
+      definition: Verified correct simulated task completion
+      denominator: one constructed attempt; not a participant sample
+      unit_or_scale: binary task outcome
+      method: synthetic observation
+      context: one simulated keyboard control
+      instrument_version: fixture 1.0.0
+      uncertainty: No inference to actual users
+      interpretation_limits: No lived-experience evidence
+    negative_cases:
+    - Initial build failed; TEST-FAIL retained
+    uncertainty: No evidence for real users or untested outcomes
+    rationale: Demonstrates record semantics only.
+- id: CONF-SIM
+  kind: conformity_conclusion
+  schema_version: 1.0.0
+  version: 1.0.0
+  status: approved
+  scope:
+    subject: SIM booking keyboard-control demonstration only
+    release: sim-2
+    territories:
+    - SIM-JURISDICTION
+    channels:
+    - sim-web
+  source_ids:
+  - E01
+  - ATLF11
+  owner: Synthetic responsible owner
+  created_on: '2026-11-01'
+  limitations:
+  - Synthetic developer fixture; no real user, national-law adapter or operational approval.
+  relationships: []
+  evidence_refs:
+  - EV-PASS
+  synthetic: true
+  review_date: '2026-12-01'
+  data:
+    applicability_ref: SCOPE-SIM
+    requirement_ids:
+    - REQ-KEYBOARD
+    requirement_conclusions:
+    - requirement_ref: REQ-KEYBOARD
+      result: supported as met
+      rationale: Synthetic second-build trace only; first-build failure superseded by explicit retest.
+      execution_refs:
+      - TEST-PASS
+      outcome_refs:
+      - OUTCOME-SIM
+    overall_decision: supported within stated scope
+    confidence: low
+    confidence_rationale: Synthetic demonstration only
+    contradictions_resolved: true
+    evidence_complete: true
+    legal_review_required: false
+  approval_ref: AP-CONF-SIM
+- id: AP-CONF-SIM
+  kind: approval
+  schema_version: 1.0.0
+  version: 1.0.0
+  status: recorded
+  scope:
+    subject: SIM booking keyboard-control demonstration only
+    release: sim-2
+    territories:
+    - SIM-JURISDICTION
+    channels:
+    - sim-web
+  source_ids:
+  - E01
+  - ATLF11
+  owner: Synthetic responsible owner
+  created_on: '2026-11-01'
+  limitations:
+  - Synthetic developer fixture; no real user, national-law adapter or operational approval.
+  relationships: []
+  evidence_refs:
+  - EV-GOV
+  synthetic: true
+  review_date: '2026-12-01'
+  data:
+    human_approver: Synthetic human approver for fixture only
+    authority_basis: Synthetic fixture authority; cannot authorise live activity
+    target_ref: CONF-SIM
+    target_version: 1.0.0
+    approved_scope:
+      subject: SIM booking keyboard-control demonstration only
+      release: sim-2
+      territories:
+      - SIM-JURISDICTION
+      channels:
+      - sim-web
+    approved_on: '2026-11-01'
+    valid_until: '2026-12-01'
+    artifact_hash: null
+    delegation_ref: null
+- id: DELEGATION-SIM
+  kind: delegation
+  schema_version: 1.0.0
+  version: 1.0.0
+  status: approved
+  scope:
+    subject: SIM booking keyboard-control demonstration only
+    release: sim-2
+    territories:
+    - SIM-JURISDICTION
+    channels:
+    - sim-web
+  source_ids:
+  - E01
+  - ATLF11
+  owner: Synthetic responsible owner
+  created_on: '2026-11-01'
+  limitations:
+  - Synthetic developer fixture; no real user, national-law adapter or operational approval.
+  relationships: []
+  evidence_refs:
+  - EV-GOV
+  synthetic: true
+  review_date: '2026-12-01'
+  data:
+    grantor: Synthetic publication owner
+    authority_basis: Synthetic fixture only; no live permission
+    operations:
+    - handoff_claim
+    purpose: Exercise publication handoff rule offline
+    limits:
+    - Exact synthetic scope and claim; no network write
+    valid_from: '2026-11-01'
+    valid_until: '2026-12-01'
+    revoked: false
+    revocation_route: Synthetic owner records revocation
+    escalation: Synthetic claim authority
+  approval_ref: AP-DELEGATION-SIM
+- id: AP-DELEGATION-SIM
+  kind: approval
+  schema_version: 1.0.0
+  version: 1.0.0
+  status: recorded
+  scope:
+    subject: SIM booking keyboard-control demonstration only
+    release: sim-2
+    territories:
+    - SIM-JURISDICTION
+    channels:
+    - sim-web
+  source_ids:
+  - E01
+  - ATLF11
+  owner: Synthetic responsible owner
+  created_on: '2026-11-01'
+  limitations:
+  - Synthetic developer fixture; no real user, national-law adapter or operational approval.
+  relationships: []
+  evidence_refs:
+  - EV-GOV
+  synthetic: true
+  review_date: '2026-12-01'
+  data:
+    human_approver: Synthetic human approver for fixture only
+    authority_basis: Synthetic fixture authority; cannot authorise live activity
+    target_ref: DELEGATION-SIM
+    target_version: 1.0.0
+    approved_scope:
+      subject: SIM booking keyboard-control demonstration only
+      release: sim-2
+      territories:
+      - SIM-JURISDICTION
+      channels:
+      - sim-web
+    approved_on: '2026-11-01'
+    valid_until: '2026-12-01'
+    artifact_hash: null
+    delegation_ref: null
+- id: CLAIM-SIM
+  kind: public_claim
+  schema_version: 1.0.0
+  version: 1.0.0
+  status: approved
+  scope:
+    subject: SIM booking keyboard-control demonstration only
+    release: sim-2
+    territories:
+    - SIM-JURISDICTION
+    channels:
+    - sim-web
+  source_ids:
+  - E01
+  - ATLF11
+  owner: Synthetic responsible owner
+  created_on: '2026-11-01'
+  limitations:
+  - Synthetic developer fixture; no real user, national-law adapter or operational approval.
+  relationships: []
+  evidence_refs:
+  - EV-PASS
+  synthetic: true
+  review_date: '2026-12-01'
+  data:
+    conformity_ref: CONF-SIM
+    exact_wording: 'Synthetic fixture only: evidence supports the single simulated keyboard-control requirement
+      for sim-2 in SIM-JURISDICTION. This is not an EAA claim about a real service.'
+    artifact_hash: 788d1f6fe843dfb71fbc0d2c67826c1c3aa19d198def8aafc79eb279aa805fa6
+    audience: developer fixture readers
+    channel: offline handoff only
+    language: en-GB
+    material_limitations:
+    - Synthetic, one requirement, no real national legal assessment
+    publication_state: handoff_ready
+    publication_authority_ref: DELEGATION-SIM
+  approval_ref: AP-CLAIM-SIM
+- id: AP-CLAIM-SIM
+  kind: approval
+  schema_version: 1.0.0
+  version: 1.0.0
+  status: recorded
+  scope:
+    subject: SIM booking keyboard-control demonstration only
+    release: sim-2
+    territories:
+    - SIM-JURISDICTION
+    channels:
+    - sim-web
+  source_ids:
+  - E01
+  - ATLF11
+  owner: Synthetic responsible owner
+  created_on: '2026-11-01'
+  limitations:
+  - Synthetic developer fixture; no real user, national-law adapter or operational approval.
+  relationships: []
+  evidence_refs:
+  - EV-GOV
+  synthetic: true
+  review_date: '2026-12-01'
+  data:
+    human_approver: Synthetic human approver for fixture only
+    authority_basis: Synthetic fixture authority; cannot authorise live activity
+    target_ref: CLAIM-SIM
+    target_version: 1.0.0
+    approved_scope:
+      subject: SIM booking keyboard-control demonstration only
+      release: sim-2
+      territories:
+      - SIM-JURISDICTION
+      channels:
+      - sim-web
+    approved_on: '2026-11-01'
+    valid_until: '2026-12-01'
+    artifact_hash: 788d1f6fe843dfb71fbc0d2c67826c1c3aa19d198def8aafc79eb279aa805fa6
+    delegation_ref: null
+- id: EVENT-SIM
+  kind: monitoring_event
+  schema_version: 1.0.0
+  version: 1.0.0
+  status: recorded
+  scope:
+    subject: SIM booking keyboard-control demonstration only
+    release: sim-2
+    territories:
+    - SIM-JURISDICTION
+    channels:
+    - sim-web
+  source_ids:
+  - E01
+  - ATLF11
+  owner: Synthetic responsible owner
+  created_on: '2026-11-01'
+  limitations:
+  - Synthetic developer fixture; no real user, national-law adapter or operational approval.
+  relationships: []
+  evidence_refs:
+  - EV-GOV
+  synthetic: true
+  review_date: '2026-12-01'
+  data:
+    trigger: Synthetic future control change
+    affected_refs:
+    - CLAIM-SIM
+    - CONF-SIM
+    observation: Change would trigger renewed scope/evidence review.
+    action: Prepare reassessment and hold changed claim
+    next_workflow: WF10
+    next_review: '2026-12-01'
+    idempotency_key: sim-control-change-1
+    execution_state: proposed
+lifecycle:
+- sequence: 1
+  record_refs:
+  - JUR-SIM
+  - SCOPE-SIM
+  meaning: Synthetic scope and review
+- sequence: 2
+  record_refs:
+  - REQ-KEYBOARD
+  - MAP-KEYBOARD
+  meaning: Scoped requirement and partial mapping
+- sequence: 3
+  record_refs:
+  - TEST-FAIL
+  - EV-FAIL
+  meaning: Original failing build retained
+- sequence: 4
+  record_refs:
+  - ISSUE-SIM
+  meaning: Correction record
+- sequence: 5
+  record_refs:
+  - TEST-PASS
+  - EV-PASS
+  - OUTCOME-SIM
+  meaning: Retest and bounded outcome
+- sequence: 6
+  record_refs:
+  - CONF-SIM
+  - AP-CONF-SIM
+  meaning: Synthetic conclusion and human-decision fixture
+- sequence: 7
+  record_refs:
+  - CLAIM-SIM
+  - AP-CLAIM-SIM
+  - DELEGATION-SIM
+  meaning: Exact-version approved synthetic handoff
+- sequence: 8
+  record_refs:
+  - EVENT-SIM
+  meaning: Monitoring route; no live event occurred

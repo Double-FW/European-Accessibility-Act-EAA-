@@ -1,0 +1,510 @@
+schema_version: 1.0.0
+synthetic: true
+purpose: Developer fixtures authored with the implementation; not independent benchmark or user evidence.
+cases:
+- id: CASE-HIGH-SATISFACTION-FAILED-REQUIREMENT
+  mode: routing
+  description: high satisfaction failed requirement
+  signals:
+    satisfaction_high: true
+    technical_failure: true
+  expected:
+    workflow: WF09
+    state: running
+    conclusion: not supported
+  prohibited_conclusions:
+  - EAA compliant
+  - publish now
+  - user satisfaction proves conformity
+- id: CASE-CLEAN-SCAN-KEYBOARD-FAILURE
+  mode: routing
+  description: clean scan keyboard failure
+  signals:
+    scan_clean: true
+    technical_failure: true
+  expected:
+    workflow: WF09
+    state: running
+    conclusion: not supported
+  prohibited_conclusions:
+  - EAA compliant
+  - publish now
+  - user satisfaction proves conformity
+- id: CASE-COMPONENT-PASS-JOURNEY-FAILURE
+  mode: routing
+  description: component pass journey failure
+  signals:
+    component_pass: true
+    journey_failure: true
+  expected:
+    workflow: WF09
+    state: running
+    conclusion: not supported
+  prohibited_conclusions:
+  - EAA compliant
+  - publish now
+  - user satisfaction proves conformity
+- id: CASE-ZERO-INACCESSIBLE-COMPLAINTS
+  mode: routing
+  description: zero inaccessible complaints
+  signals:
+    complaint_count: 0
+    inaccessible_complaints: true
+  expected:
+    workflow: WF09
+    state: running
+    conclusion: cannot conclude
+  prohibited_conclusions:
+  - EAA compliant
+  - publish now
+  - user satisfaction proves conformity
+- id: CASE-MISSING-NATIONAL-LAW
+  mode: routing
+  description: missing national law
+  signals:
+    missing_national_law: true
+  expected:
+    workflow: WF02
+    state: blocked
+    conclusion: legal review required
+  prohibited_conclusions:
+  - EAA compliant
+  - publish now
+  - user satisfaction proves conformity
+- id: CASE-EXPIRED-DELEGATION
+  mode: routing
+  description: expired delegation
+  signals:
+    expired_delegation: true
+  expected:
+    workflow: WF08
+    state: blocked
+    conclusion: cannot publish
+  prohibited_conclusions:
+  - EAA compliant
+  - publish now
+  - user satisfaction proves conformity
+- id: CASE-SUPERSEDED-SOURCE
+  mode: routing
+  description: superseded source
+  signals:
+    superseded_source: true
+  expected:
+    workflow: WF01
+    state: blocked
+    conclusion: cannot conclude
+  prohibited_conclusions:
+  - EAA compliant
+  - publish now
+  - user satisfaction proves conformity
+- id: CASE-INVALID-TEST-ASSUMPTIONS
+  mode: routing
+  description: invalid test assumptions
+  signals:
+    invalid_assumptions: true
+  expected:
+    workflow: WF05
+    state: blocked
+    conclusion: cannot conclude
+  prohibited_conclusions:
+  - EAA compliant
+  - publish now
+  - user satisfaction proves conformity
+- id: CASE-SEVERE-MINORITY-BARRIER
+  mode: routing
+  description: severe minority barrier
+  signals:
+    average_high: true
+    severe_minority_barrier: true
+  expected:
+    workflow: WF09
+    state: running
+    conclusion: not supported
+  prohibited_conclusions:
+  - EAA compliant
+  - publish now
+  - user satisfaction proves conformity
+- id: CASE-SUPPLIER-DECLARATION-ONLY
+  mode: routing
+  description: supplier declaration only
+  signals:
+    supplier_declaration_only: true
+  expected:
+    workflow: WF04
+    state: blocked
+    conclusion: cannot conclude
+  prohibited_conclusions:
+  - EAA compliant
+  - publish now
+  - user satisfaction proves conformity
+- id: CASE-CLAIM-WITHOUT-APPROVAL
+  mode: routing
+  description: claim without approval
+  signals:
+    unapproved_claim: true
+  expected:
+    workflow: WF08
+    state: blocked
+    conclusion: cannot publish
+  prohibited_conclusions:
+  - EAA compliant
+  - publish now
+  - user satisfaction proves conformity
+- id: CASE-COMPLETE-EVIDENCE-TO-HUMAN-HANDOFF
+  mode: routing
+  description: complete evidence to human handoff
+  signals:
+    approved_complete_case: true
+  expected:
+    workflow: WF08
+    state: awaiting_approval
+    conclusion: prepare controlled handoff
+  prohibited_conclusions:
+  - EAA compliant
+  - publish now
+  - user satisfaction proves conformity
+- id: CASE-CONTRADICTORY-EVIDENCE
+  mode: routing
+  description: contradictory evidence
+  signals:
+    contradiction: true
+  expected:
+    workflow: WF09
+    state: running
+    conclusion: cannot conclude
+  prohibited_conclusions:
+  - EAA compliant
+  - publish now
+  - user satisfaction proves conformity
+- id: CASE-MISSING-HUMAN
+  mode: record_mutation
+  description: Reject missing human
+  mutations:
+  - record_id: AP-CLAIM-SIM
+    path: data.human_approver
+    delete: true
+  expected_error_codes:
+  - SCHEMA
+  prohibited_conclusions:
+  - valid approved claim
+- id: CASE-MISSING-CLAIM-EVIDENCE
+  mode: record_mutation
+  description: Reject missing claim evidence
+  mutations:
+  - record_id: CLAIM-SIM
+    path: evidence_refs
+    value: []
+  expected_error_codes:
+  - SCHEMA
+  prohibited_conclusions:
+  - valid approved claim
+- id: CASE-DANGLING-EVIDENCE
+  mode: record_mutation
+  description: Reject dangling evidence
+  mutations:
+  - record_id: CLAIM-SIM
+    path: evidence_refs
+    value:
+    - EV-UNKNOWN
+  expected_error_codes:
+  - DANGLING_REFERENCE
+  prohibited_conclusions:
+  - valid approved claim
+- id: CASE-CHANGED-WORDING
+  mode: record_mutation
+  description: Reject changed wording
+  mutations:
+  - record_id: CLAIM-SIM
+    path: data.exact_wording
+    value: Broadened claim about all services
+  expected_error_codes:
+  - CLAIM_HASH
+  prohibited_conclusions:
+  - valid approved claim
+- id: CASE-CHANGED-CLAIM-VERSION
+  mode: record_mutation
+  description: Reject changed claim version
+  mutations:
+  - record_id: CLAIM-SIM
+    path: version
+    value: 2.0.0
+  expected_error_codes:
+  - APPROVAL_BINDING
+  prohibited_conclusions:
+  - valid approved claim
+- id: CASE-EXPIRED-AUTHORITY
+  mode: record_mutation
+  description: Reject expired authority
+  mutations:
+  - record_id: DELEGATION-SIM
+    path: data.valid_until
+    value: '2026-10-31'
+  expected_error_codes:
+  - PUBLICATION_AUTHORITY
+  prohibited_conclusions:
+  - valid approved claim
+- id: CASE-WRONG-OPERATION
+  mode: record_mutation
+  description: Reject wrong operation
+  mutations:
+  - record_id: DELEGATION-SIM
+    path: data.operations
+    value:
+    - read_only
+  expected_error_codes:
+  - PUBLICATION_AUTHORITY
+  prohibited_conclusions:
+  - valid approved claim
+- id: CASE-POSITIVE-WITH-FAIL
+  mode: record_mutation
+  description: Reject positive with fail
+  mutations:
+  - record_id: CONF-SIM
+    path: data.requirement_conclusions.0.execution_refs
+    value:
+    - TEST-FAIL
+  expected_error_codes:
+  - UNSUPPORTED_POSITIVE
+  prohibited_conclusions:
+  - valid approved claim
+- id: CASE-POSITIVE-OUTCOME-ONLY
+  mode: record_mutation
+  description: Reject positive outcome only
+  mutations:
+  - record_id: CONF-SIM
+    path: data.requirement_conclusions.0.execution_refs
+    value: []
+  expected_error_codes:
+  - UNSUPPORTED_POSITIVE
+  prohibited_conclusions:
+  - valid approved claim
+- id: CASE-CONTRADICTORY-POSITIVE
+  mode: record_mutation
+  description: Reject contradictory positive
+  mutations:
+  - record_id: CONF-SIM
+    path: data.contradictions_resolved
+    value: false
+  expected_error_codes:
+  - UNSUPPORTED_POSITIVE
+  prohibited_conclusions:
+  - valid approved claim
+- id: CASE-STALE-POSITIVE
+  mode: record_mutation
+  description: Reject stale positive
+  mutations:
+  - record_id: EV-PASS
+    path: data.current
+    value: false
+  expected_error_codes:
+  - UNSUPPORTED_POSITIVE
+  prohibited_conclusions:
+  - valid approved claim
+- id: CASE-INVALID-ASSUMPTIONS-PASS
+  mode: record_mutation
+  description: Reject invalid assumptions pass
+  mutations:
+  - record_id: TEST-PASS
+    path: data.assumptions_met
+    value: false
+  expected_error_codes:
+  - INVALID_ASSESSMENT
+  prohibited_conclusions:
+  - valid approved claim
+- id: CASE-ADAPTER-SILENT-PASS
+  mode: record_mutation
+  description: Reject adapter silent pass
+  mutations:
+  - record_id: TEST-PASS
+    path: data.source_result
+    value: Cannot tell
+  expected_error_codes:
+  - RESULT_ADAPTER
+  prohibited_conclusions:
+  - valid approved claim
+- id: CASE-INCOMPLETE-PASS
+  mode: record_mutation
+  description: Reject incomplete pass
+  mutations:
+  - record_id: TEST-PASS
+    path: data.coverage_complete
+    value: false
+  expected_error_codes:
+  - INCOMPLETE_COVERAGE
+  prohibited_conclusions:
+  - valid approved claim
+- id: CASE-MISSING-RETEST
+  mode: record_mutation
+  description: Reject missing retest
+  mutations:
+  - record_id: ISSUE-SIM
+    path: data.retest_refs
+    value: []
+  expected_error_codes:
+  - RETEST_REQUIRED
+  prohibited_conclusions:
+  - valid approved claim
+- id: CASE-MISSING-REQUIREMENT-CONCLUSION
+  mode: record_mutation
+  description: Reject missing requirement conclusion
+  mutations:
+  - record_id: CONF-SIM
+    path: data.requirement_conclusions
+    value: []
+  expected_error_codes:
+  - SCHEMA
+  prohibited_conclusions:
+  - valid approved claim
+- id: CASE-SYNTHETIC-TO-REAL
+  mode: record_mutation
+  description: Reject synthetic to real
+  mutations:
+  - record_id: CLAIM-SIM
+    path: synthetic
+    value: false
+  expected_error_codes:
+  - SYNTHETIC_LEAK
+  prohibited_conclusions:
+  - valid approved claim
+- id: CASE-EXPIRED-APPROVAL
+  mode: record_mutation
+  description: Reject expired approval
+  mutations:
+  - record_id: AP-CLAIM-SIM
+    path: data.valid_until
+    value: '2026-10-31'
+  expected_error_codes:
+  - APPROVAL_BINDING
+  prohibited_conclusions:
+  - valid approved claim
+- id: CASE-APPROVED-WITHOUT-LAW
+  mode: record_mutation
+  description: Reject approved without law
+  mutations:
+  - record_id: SCOPE-SIM
+    path: data.national_law_refs
+    value: []
+  expected_error_codes:
+  - SCHEMA
+  prohibited_conclusions:
+  - valid approved claim
+- id: CASE-CLAIM-WITHOUT-CONFORMITY
+  mode: record_mutation
+  description: Reject claim without conformity
+  mutations:
+  - record_id: CLAIM-SIM
+    path: data.conformity_ref
+    value: CONF-MISSING
+  expected_error_codes:
+  - DANGLING_REFERENCE
+  - UNSUPPORTED_CLAIM
+  prohibited_conclusions:
+  - valid approved claim
+- id: CASE-VALID-APPROVAL-TRANSITION
+  mode: transition
+  description: valid approval transition
+  event:
+    workflow: WF08
+    step: WF08-S2
+    from: awaiting_approval
+    to: completed
+    evidence_refs:
+    - synthetic-review-pack
+    approval_verified: true
+    completed_step_ids:
+    - WF08-S1
+  expected_error_codes: []
+  prohibited_conclusions:
+  - real action authorised by fixture
+- id: CASE-SKIPPED-APPROVAL
+  mode: transition
+  description: skipped approval
+  event:
+    workflow: WF08
+    step: WF08-S2
+    from: running
+    to: completed
+    evidence_refs:
+    - synthetic-review-pack
+    approval_verified: false
+    completed_step_ids:
+    - WF08-S1
+  expected_error_codes:
+  - INVALID_TRANSITION
+  - TRANSITION_APPROVAL
+  prohibited_conclusions:
+  - real action authorised by fixture
+- id: CASE-NO-STEP-EVIDENCE
+  mode: transition
+  description: no step evidence
+  event:
+    workflow: WF01
+    step: WF01-S1
+    from: running
+    to: completed
+    evidence_refs: []
+    completed_step_ids: []
+  expected_error_codes:
+  - TRANSITION_EVIDENCE
+  prohibited_conclusions:
+  - real action authorised by fixture
+- id: CASE-MISSING-STEP-DEPENDENCY
+  mode: transition
+  description: missing step dependency
+  event:
+    workflow: WF01
+    step: WF01-S2
+    from: running
+    to: completed
+    evidence_refs:
+    - synthetic-observation
+    completed_step_ids: []
+  expected_error_codes:
+  - STEP_DEPENDENCY
+  prohibited_conclusions:
+  - real action authorised by fixture
+- id: CASE-RESUME-WITHOUT-RESOLUTION
+  mode: transition
+  description: resume without resolution
+  event:
+    workflow: WF05
+    step: WF05-S2
+    from: blocked
+    to: running
+    evidence_refs:
+    - synthetic-state
+    dependency_resolved: false
+    authority_valid: true
+  expected_error_codes:
+  - UNRESOLVED_DEPENDENCY
+  prohibited_conclusions:
+  - real action authorised by fixture
+- id: CASE-NO-RUN-AUTHORITY
+  mode: transition
+  description: no run authority
+  event:
+    workflow: WF05
+    step: WF05-S2
+    from: pending
+    to: running
+    evidence_refs:
+    - synthetic-state
+    authority_valid: false
+  expected_error_codes:
+  - ACTION_AUTHORITY
+  prohibited_conclusions:
+  - real action authorised by fixture
+- id: CASE-INVALID-STATE-JUMP
+  mode: transition
+  description: invalid state jump
+  event:
+    workflow: WF01
+    step: WF01-S1
+    from: pending
+    to: completed
+    evidence_refs:
+    - synthetic-state
+  expected_error_codes:
+  - INVALID_TRANSITION
+  prohibited_conclusions:
+  - real action authorised by fixture

@@ -1,0 +1,485 @@
+schema_version: 1.0.0
+report_id: REVIEW
+ready_for_operational_use: false
+resolution_scope: Corrections/safeguards in the new guide package; original attachments and remote repositories
+  are unchanged.
+findings:
+- id: R01
+  priority: P0
+  disposition: corrected
+  rationale: Article 2 routing replaces universal commercial-web scope.
+  output_locations:
+  - guides/01-scope-and-applicability.md#purpose-and-trigger
+  source_ids:
+  - E01
+  - A05
+  validation:
+  - Local target/anchor and required register fields checked by check_repository.py
+  - Substantive drafting review performed; human organisational/legal adoption remains pending.
+  remaining_dependency: Competent human adoption/review of draft guidance; no real service approval inferred.
+- id: R02
+  priority: P0
+  disposition: corrected
+  rationale: Programme length is not a scope/exclusion test; content and service routes distinguished.
+  output_locations:
+  - guides/01-scope-and-applicability.md#article-2-routing
+  source_ids:
+  - E01
+  - A02
+  validation:
+  - Local target/anchor and required register fields checked by check_repository.py
+  - Substantive drafting review performed; human organisational/legal adoption remains pending.
+  remaining_dependency: Competent human adoption/review of draft guidance; no real service approval inferred.
+- id: R03
+  priority: P0
+  disposition: corrected
+  rationale: Product/service and Annex routes kept distinct.
+  output_locations:
+  - guides/01-scope-and-applicability.md#annex-routing-and-decision
+  source_ids:
+  - E01
+  - A05
+  validation:
+  - Local target/anchor and required register fields checked by check_repository.py
+  - Substantive drafting review performed; human organisational/legal adoption remains pending.
+  remaining_dependency: Competent human adoption/review of draft guidance; no real service approval inferred.
+- id: R04
+  priority: P0
+  disposition: corrected
+  rationale: All a–k lenses include privacy and conditional legal use.
+  output_locations:
+  - guides/04-customer-outcomes-and-research.md#functional-lenses-and-contextual-needs
+  source_ids:
+  - E01
+  - A03
+  validation:
+  - Local target/anchor and required register fields checked by check_repository.py
+  - Substantive drafting review performed; human organisational/legal adoption remains pending.
+  remaining_dependency: Competent human adoption/review of draft guidance; no real service approval inferred.
+- id: R05
+  priority: P0
+  disposition: corrected
+  rationale: Mappings are partial evidence relationships, not executions or full coverage.
+  output_locations:
+  - guides/02-requirements-and-assessment.md#correct-the-mapping-approach
+  source_ids:
+  - A02
+  - E02
+  validation:
+  - Local target/anchor and required register fields checked by check_repository.py
+  - Substantive drafting review performed; human organisational/legal adoption remains pending.
+  remaining_dependency: Competent human adoption/review of draft guidance; no real service approval inferred.
+- id: R06
+  priority: P0
+  disposition: corrected
+  rationale: B2 tied to banking IV(e)(ii), not a universal website rule.
+  output_locations:
+  - guides/02-requirements-and-assessment.md#correct-the-mapping-approach
+  source_ids:
+  - E01
+  - A02
+  validation:
+  - Local target/anchor and required register fields checked by check_repository.py
+  - Substantive drafting review performed; human organisational/legal adoption remains pending.
+  remaining_dependency: Competent human adoption/review of draft guidance; no real service approval inferred.
+- id: R07
+  priority: P0
+  disposition: corrected
+  rationale: SC 3.3.8 at AA supports applicable authentication; wider transaction evidence remains.
+  output_locations:
+  - guides/02-requirements-and-assessment.md#correct-the-mapping-approach
+  source_ids:
+  - E08
+  - E01
+  validation:
+  - Local target/anchor and required register fields checked by check_repository.py
+  - Substantive drafting review performed; human organisational/legal adoption remains pending.
+  remaining_dependency: Competent human adoption/review of draft guidance; no real service approval inferred.
+- id: R08
+  priority: P0
+  disposition: corrected
+  rationale: Law, local baseline and legislation-specific citation recorded separately.
+  output_locations:
+  - guides/02-requirements-and-assessment.md#select-and-version-the-baseline
+  source_ids:
+  - E01
+  - E02
+  - E04
+  validation:
+  - Local target/anchor and required register fields checked by check_repository.py
+  - Substantive drafting review performed; human organisational/legal adoption remains pending.
+  remaining_dependency: Competent human adoption/review of draft guidance; no real service approval inferred.
+- id: R09
+  priority: P1
+  disposition: corrected
+  rationale: No wildcard proof; exact example criteria and levels.
+  output_locations:
+  - guides/02-requirements-and-assessment.md#correct-the-mapping-approach
+  source_ids:
+  - E08
+  - A02
+  validation:
+  - Local target/anchor and required register fields checked by check_repository.py
+  - Substantive drafting review performed; human organisational/legal adoption remains pending.
+  remaining_dependency: Competent human adoption/review of draft guidance; no real service approval inferred.
+- id: R10
+  priority: P1
+  disposition: corrected
+  rationale: Content/typography outcomes and residual evidence replace certified-font invention.
+  output_locations:
+  - guides/02-requirements-and-assessment.md#correct-the-mapping-approach
+  source_ids:
+  - A02
+  - E01
+  validation:
+  - Local target/anchor and required register fields checked by check_repository.py
+  - Substantive drafting review performed; human organisational/legal adoption remains pending.
+  remaining_dependency: Competent human adoption/review of draft guidance; no real service approval inferred.
+- id: R11
+  priority: P1
+  disposition: constrained
+  rationale: No completeness claim; methods and examples only.
+  output_locations:
+  - guides/02-requirements-and-assessment.md#select-and-version-the-baseline
+  source_ids:
+  - E02
+  - A02
+  validation:
+  - Local target/anchor and required register fields checked by check_repository.py
+  - Substantive drafting review performed; human organisational/legal adoption remains pending.
+  remaining_dependency: Project-specific inputs or external evidence are required for operational use; see
+    control/validation-report.md.
+- id: R12
+  priority: P1
+  disposition: corrected
+  rationale: Complete category routing includes e-readers and emergency answering with transport qualifications.
+  output_locations:
+  - guides/01-scope-and-applicability.md#article-2-routing
+  source_ids:
+  - E01
+  - A05
+  validation:
+  - Local target/anchor and required register fields checked by check_repository.py
+  - Substantive drafting review performed; human organisational/legal adoption remains pending.
+  remaining_dependency: Competent human adoption/review of draft guidance; no real service approval inferred.
+- id: R13
+  priority: P1
+  disposition: corrected
+  rationale: Both Section VII routes and equivalent/increased accessibility conditions retained.
+  output_locations:
+  - guides/01-scope-and-applicability.md#annex-routing-and-decision
+  source_ids:
+  - E01
+  - A05
+  validation:
+  - Local target/anchor and required register fields checked by check_repository.py
+  - Substantive drafting review performed; human organisational/legal adoption remains pending.
+  remaining_dependency: Competent human adoption/review of draft guidance; no real service approval inferred.
+- id: R14
+  priority: P1
+  disposition: constrained
+  rationale: Directive decision conditions supplied; national adapters remain prerequisites.
+  output_locations:
+  - guides/01-scope-and-applicability.md#exclusions-dates-and-limitations
+  source_ids:
+  - E01
+  - A05
+  validation:
+  - Local target/anchor and required register fields checked by check_repository.py
+  - Substantive drafting review performed; human organisational/legal adoption remains pending.
+  remaining_dependency: Project-specific inputs or external evidence are required for operational use; see
+    control/validation-report.md.
+- id: R15
+  priority: P1
+  disposition: corrected
+  rationale: Official Robust name retained; actual interoperability evidence required.
+  output_locations:
+  - guides/02-requirements-and-assessment.md#select-and-version-the-baseline
+  source_ids:
+  - E08
+  - A01
+  validation:
+  - Local target/anchor and required register fields checked by check_repository.py
+  - Substantive drafting review performed; human organisational/legal adoption remains pending.
+  remaining_dependency: Competent human adoption/review of draft guidance; no real service approval inferred.
+- id: R16
+  priority: P1
+  disposition: corrected
+  rationale: Cognitive accessibility and usability overlap without equivalence assertion.
+  output_locations:
+  - guides/02-requirements-and-assessment.md#select-and-version-the-baseline
+  source_ids:
+  - A01
+  - D047
+  validation:
+  - Local target/anchor and required register fields checked by check_repository.py
+  - Substantive drafting review performed; human organisational/legal adoption remains pending.
+  remaining_dependency: Competent human adoption/review of draft guidance; no real service approval inferred.
+- id: R17
+  priority: P1
+  disposition: corrected
+  rationale: Satisfaction is distinct evidence, not a formal fifth principle or conformity proof.
+  output_locations:
+  - guides/04-customer-outcomes-and-research.md#findings-outputs-and-next-workflow
+  source_ids:
+  - A01
+  - D017
+  validation:
+  - Local target/anchor and required register fields checked by check_repository.py
+  - Substantive drafting review performed; human organisational/legal adoption remains pending.
+  remaining_dependency: Competent human adoption/review of draft guidance; no real service approval inferred.
+- id: R18
+  priority: P1
+  disposition: corrected
+  rationale: Operational measures plus mandatory schema fields replace unfinished labels.
+  output_locations:
+  - guides/04-customer-outcomes-and-research.md#measures-and-interpretation
+  source_ids:
+  - A02
+  - D042
+  validation:
+  - Local target/anchor and required register fields checked by check_repository.py
+  - Substantive drafting review performed; human organisational/legal adoption remains pending.
+  remaining_dependency: Competent human adoption/review of draft guidance; no real service approval inferred.
+- id: R19
+  priority: P1
+  disposition: excluded_with_reason
+  rationale: Rejected complaint/enforcement rhetoric is excluded from active instructions.
+  output_locations:
+  - AGENTS.md#retrieve-and-preserve-sources
+  source_ids:
+  - A04
+  - REVIEW
+  validation:
+  - Local target/anchor and required register fields checked by check_repository.py
+  - Substantive drafting review performed; human organisational/legal adoption remains pending.
+  remaining_dependency: Excluded material must remain outside active rule retrieval.
+- id: R20
+  priority: P1
+  disposition: corrected
+  rationale: IDSO-01–20 retained; typed status distinctions enforced.
+  output_locations:
+  - guides/04-customer-outcomes-and-research.md#purpose-trigger-and-inputs
+  source_ids:
+  - D017
+  validation:
+  - Local target/anchor and required register fields checked by check_repository.py
+  - Substantive drafting review performed; human organisational/legal adoption remains pending.
+  remaining_dependency: Competent human adoption/review of draft guidance; no real service approval inferred.
+- id: R21
+  priority: P1
+  disposition: corrected
+  rationale: No universal sighted-mouse norm or timing tolerance bands.
+  output_locations:
+  - guides/04-customer-outcomes-and-research.md#measures-and-interpretation
+  source_ids:
+  - D104
+  validation:
+  - Local target/anchor and required register fields checked by check_repository.py
+  - Substantive drafting review performed; human organisational/legal adoption remains pending.
+  remaining_dependency: Competent human adoption/review of draft guidance; no real service approval inferred.
+- id: R22
+  priority: P1
+  disposition: constrained
+  rationale: No provider/API claimed; instrument, permissions and export validation required.
+  output_locations:
+  - guides/04-customer-outcomes-and-research.md#collect-complementary-evidence
+  source_ids:
+  - D042
+  - D036
+  validation:
+  - Local target/anchor and required register fields checked by check_repository.py
+  - Substantive drafting review performed; human organisational/legal adoption remains pending.
+  remaining_dependency: Project-specific inputs or external evidence are required for operational use; see
+    control/validation-report.md.
+- id: R23
+  priority: P1
+  disposition: corrected
+  rationale: Minimisation before collection; recording consent/authority and anonymity qualified.
+  output_locations:
+  - guides/04-customer-outcomes-and-research.md#collect-complementary-evidence
+  source_ids:
+  - D045
+  - D042
+  validation:
+  - Local target/anchor and required register fields checked by check_repository.py
+  - Substantive drafting review performed; human organisational/legal adoption remains pending.
+  remaining_dependency: Competent human adoption/review of draft guidance; no real service approval inferred.
+- id: R24
+  priority: P1
+  disposition: corrected
+  rationale: No always-on simultaneous modality rule; control and appropriate cues required.
+  output_locations:
+  - guides/04-customer-outcomes-and-research.md#functional-lenses-and-contextual-needs
+  source_ids:
+  - D047
+  validation:
+  - Local target/anchor and required register fields checked by check_repository.py
+  - Substantive drafting review performed; human organisational/legal adoption remains pending.
+  remaining_dependency: Competent human adoption/review of draft guidance; no real service approval inferred.
+- id: R25
+  priority: P0
+  disposition: constrained
+  rationale: ATLF 1.1 recovered and vocabulary verified; linked remote test assets still unavailable.
+  output_locations:
+  - guides/05-evidence-conformity-and-claims.md#distinguish-decision-routes
+  source_ids:
+  - ATLF11
+  - QA-REMOTE
+  validation:
+  - Local target/anchor and required register fields checked by check_repository.py
+  - Substantive drafting review performed; human organisational/legal adoption remains pending.
+  remaining_dependency: Project-specific inputs or external evidence are required for operational use; see
+    control/validation-report.md.
+- id: R26
+  priority: P1
+  disposition: constrained
+  rationale: Local canonical routes repaired; missing guide recovered, old remote links not falsely claimed
+    repaired.
+  output_locations:
+  - README.md#bootstrap-and-adoption-state
+  source_ids:
+  - A05
+  - A06
+  - EAAG25
+  validation:
+  - Local target/anchor and required register fields checked by check_repository.py
+  - Substantive drafting review performed; human organisational/legal adoption remains pending.
+  remaining_dependency: Project-specific inputs or external evidence are required for operational use; see
+    control/validation-report.md.
+- id: R27
+  priority: P0
+  disposition: excluded_with_reason
+  rationale: Superseded EAA dataset excluded, preserved as source-status history only.
+  output_locations:
+  - AGENTS.md#retrieve-and-preserve-sources
+  source_ids:
+  - REVIEW
+  validation:
+  - Local target/anchor and required register fields checked by check_repository.py
+  - Substantive drafting review performed; human organisational/legal adoption remains pending.
+  remaining_dependency: Excluded material must remain outside active rule retrieval.
+- id: R28
+  priority: P1
+  disposition: corrected
+  rationale: Distinct source identities, original hashes, aliases and local 1.0.0 version recorded.
+  output_locations:
+  - control/source-register.yaml
+  source_ids:
+  - A05
+  - A07
+  - A08
+  - A09
+  validation:
+  - Local target/anchor and required register fields checked by check_repository.py
+  - Substantive drafting review performed; human organisational/legal adoption remains pending.
+  remaining_dependency: Competent human adoption/review of draft guidance; no real service approval inferred.
+- id: R29
+  priority: P1
+  disposition: corrected
+  rationale: Seven ATLF values verified; explicit QA adapter retains original labels and causes.
+  output_locations:
+  - AGENTS.md#results-and-decisions
+  source_ids:
+  - ATLF11
+  - D039
+  validation:
+  - Local target/anchor and required register fields checked by check_repository.py
+  - Substantive drafting review performed; human organisational/legal adoption remains pending.
+  remaining_dependency: Competent human adoption/review of draft guidance; no real service approval inferred.
+- id: R30
+  priority: P1
+  disposition: constrained
+  rationale: Neither engine adopted; project pinning/profile and actual known-failure evidence required.
+  output_locations:
+  - guides/02-requirements-and-assessment.md#plan-and-execute-complementary-methods
+  source_ids:
+  - D039
+  - D036
+  validation:
+  - Local target/anchor and required register fields checked by check_repository.py
+  - Substantive drafting review performed; human organisational/legal adoption remains pending.
+  remaining_dependency: Project-specific inputs or external evidence are required for operational use; see
+    control/validation-report.md.
+- id: R31
+  priority: P1
+  disposition: constrained
+  rationale: Model versions remain distinct; no automatic level mapping or legal certification.
+  output_locations:
+  - guides/06-monitoring-and-corrective-action.md#measure-process-and-ai-accuracy
+  source_ids:
+  - D058
+  - D105
+  validation:
+  - Local target/anchor and required register fields checked by check_repository.py
+  - Substantive drafting review performed; human organisational/legal adoption remains pending.
+  remaining_dependency: Project-specific inputs or external evidence are required for operational use; see
+    control/validation-report.md.
+- id: R32
+  priority: P0
+  disposition: corrected
+  rationale: User consequence determines priority; fixed severity defaults excluded.
+  output_locations:
+  - guides/06-monitoring-and-corrective-action.md#triage-and-protect-people
+  source_ids:
+  - D101
+  - ATLF11
+  validation:
+  - Local target/anchor and required register fields checked by check_repository.py
+  - Substantive drafting review performed; human organisational/legal adoption remains pending.
+  remaining_dependency: Competent human adoption/review of draft guidance; no real service approval inferred.
+- id: R33
+  priority: P1
+  disposition: corrected
+  rationale: Extended discriminated schema, approval bindings and negative mutation checks replace minimal
+    claims schema.
+  output_locations:
+  - records/README.md
+  source_ids:
+  - D094
+  - A06
+  validation:
+  - Local target/anchor and required register fields checked by check_repository.py
+  - Substantive drafting review performed; human organisational/legal adoption remains pending.
+  remaining_dependency: Competent human adoption/review of draft guidance; no real service approval inferred.
+- id: R34
+  priority: P1
+  disposition: constrained
+  rationale: Definitions/checker operate locally; orchestration, real pilot and operational approval remain
+    separate.
+  output_locations:
+  - AGENTS.md#change-and-readiness
+  source_ids:
+  - D042
+  - ATLF11
+  validation:
+  - Local target/anchor and required register fields checked by check_repository.py
+  - Substantive drafting review performed; human organisational/legal adoption remains pending.
+  remaining_dependency: Project-specific inputs or external evidence are required for operational use; see
+    control/validation-report.md.
+- id: R35
+  priority: P1
+  disposition: excluded_with_reason
+  rationale: No contextual prevalence, historical or corporate commitment statistics are trained as local targets.
+  output_locations:
+  - guides/06-monitoring-and-corrective-action.md#measure-process-and-ai-accuracy
+  source_ids:
+  - REVIEW
+  - D105
+  validation:
+  - Local target/anchor and required register fields checked by check_repository.py
+  - Substantive drafting review performed; human organisational/legal adoption remains pending.
+  remaining_dependency: Excluded material must remain outside active rule retrieval.
+- id: R36
+  priority: P1
+  disposition: corrected
+  rationale: Guidance, actual evidence, synthetic fixtures and future independent evaluation are separated.
+  output_locations:
+  - validation/README.md
+  source_ids:
+  - REVIEW
+  - D042
+  validation:
+  - Local target/anchor and required register fields checked by check_repository.py
+  - Substantive drafting review performed; human organisational/legal adoption remains pending.
+  remaining_dependency: Competent human adoption/review of draft guidance; no real service approval inferred.

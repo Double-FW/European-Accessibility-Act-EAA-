@@ -1,0 +1,226 @@
+schema_version: 1.0.0
+purpose: Instantiation instructions; none of these declarations is an approved record.
+common:
+  required_fields:
+  - id
+  - kind
+  - schema_version
+  - version
+  - status
+  - scope
+  - source_ids
+  - owner
+  - created_on
+  - limitations
+  - relationships
+  - evidence_refs
+  - synthetic
+  - review_date
+  - data
+  status: draft
+  synthetic: false
+  scope_fields:
+  - subject
+  - release
+  - territories
+  - channels
+  rule: Supply real facts; never replace a missing fact with a fabricated approval.
+templates:
+- kind: source
+  required_data_fields:
+  - authority_type
+  - source_version
+  - location
+  - source_status
+  - verified_on
+  - reviewed_scope
+  - rights
+  missing_input_action: Record the gap and block only the dependent decision.
+  schema_pointer: ../records/record.schema.json#/oneOf/0
+- kind: jurisdiction
+  required_data_fields:
+  - member_state
+  - national_law_refs
+  - competent_authority
+  - application_dates
+  - duties
+  missing_input_action: Record the gap and block only the dependent decision.
+  schema_pointer: ../records/record.schema.json#/oneOf/1
+- kind: applicability
+  required_data_fields:
+  - scope_decision
+  - legal_limitation_status
+  - operator_roles
+  - category
+  - jurisdiction_refs
+  - national_law_refs
+  - annex_routes
+  - included
+  - excluded
+  - legal_limitation_refs
+  - rationale
+  missing_input_action: Record the gap and block only the dependent decision.
+  schema_pointer: ../records/record.schema.json#/oneOf/2
+- kind: requirement
+  required_data_fields:
+  - legal_clause
+  - authority_type
+  - interpretation
+  - applicability_ref
+  - acceptance_conditions
+  - assessment_methods
+  - evidence_required
+  - mandatory
+  missing_input_action: Record the gap and block only the dependent decision.
+  schema_pointer: ../records/record.schema.json#/oneOf/3
+- kind: mapping
+  required_data_fields:
+  - requirement_ref
+  - source_id
+  - source_version
+  - clause
+  - applicability_rationale
+  - relationship
+  - coverage_limits
+  - assessment_method
+  - evidence_required
+  missing_input_action: Record the gap and block only the dependent decision.
+  schema_pointer: ../records/record.schema.json#/oneOf/4
+- kind: test_execution
+  required_data_fields:
+  - requirement_ref
+  - procedure_ref
+  - method
+  - environment
+  - precondition_met
+  - assumptions_met
+  - source_vocabulary
+  - source_result
+  - normalised_result
+  - adapter_rationale
+  - observation
+  - cause
+  - coverage_complete
+  missing_input_action: Record the gap and block only the dependent decision.
+  schema_pointer: ../records/record.schema.json#/oneOf/5
+- kind: evidence
+  required_data_fields:
+  - category
+  - observation
+  - method
+  - environment
+  - location
+  - supports_refs
+  - contradicts_refs
+  - does_not_establish
+  - authenticity
+  - access
+  - retention
+  - current
+  missing_input_action: Record the gap and block only the dependent decision.
+  schema_pointer: ../records/record.schema.json#/oneOf/6
+- kind: outcome_finding
+  required_data_fields:
+  - outcome_id
+  - finding
+  - observed_or_reported
+  - population_context
+  - measures
+  - negative_cases
+  - uncertainty
+  - rationale
+  missing_input_action: Record the gap and block only the dependent decision.
+  schema_pointer: ../records/record.schema.json#/oneOf/7
+- kind: issue
+  required_data_fields:
+  - category
+  - requirement_refs
+  - impact
+  - priority_rationale
+  - action
+  - due_on
+  - compensating_action
+  - monitoring
+  - retest_refs
+  - resolution
+  - review_on
+  - expires_on
+  missing_input_action: Record the gap and block only the dependent decision.
+  schema_pointer: ../records/record.schema.json#/oneOf/8
+- kind: legal_limitation
+  required_data_fields:
+  - limitation_type
+  - legal_basis
+  - affected_requirements
+  - assessment
+  - notification_duties
+  - continuing_duties
+  - review_on
+  - expires_on
+  missing_input_action: Record the gap and block only the dependent decision.
+  schema_pointer: ../records/record.schema.json#/oneOf/9
+- kind: delegation
+  required_data_fields:
+  - grantor
+  - authority_basis
+  - operations
+  - purpose
+  - limits
+  - valid_from
+  - valid_until
+  - revoked
+  - revocation_route
+  - escalation
+  missing_input_action: Record the gap and block only the dependent decision.
+  schema_pointer: ../records/record.schema.json#/oneOf/10
+- kind: approval
+  required_data_fields:
+  - human_approver
+  - authority_basis
+  - target_ref
+  - target_version
+  - approved_scope
+  - approved_on
+  - valid_until
+  - artifact_hash
+  - delegation_ref
+  missing_input_action: Record the gap and block only the dependent decision.
+  schema_pointer: ../records/record.schema.json#/oneOf/11
+- kind: conformity_conclusion
+  required_data_fields:
+  - applicability_ref
+  - requirement_ids
+  - requirement_conclusions
+  - overall_decision
+  - confidence
+  - confidence_rationale
+  - contradictions_resolved
+  - evidence_complete
+  - legal_review_required
+  missing_input_action: Record the gap and block only the dependent decision.
+  schema_pointer: ../records/record.schema.json#/oneOf/12
+- kind: public_claim
+  required_data_fields:
+  - conformity_ref
+  - exact_wording
+  - artifact_hash
+  - audience
+  - channel
+  - language
+  - material_limitations
+  - publication_state
+  - publication_authority_ref
+  missing_input_action: Record the gap and block only the dependent decision.
+  schema_pointer: ../records/record.schema.json#/oneOf/13
+- kind: monitoring_event
+  required_data_fields:
+  - trigger
+  - affected_refs
+  - observation
+  - action
+  - next_workflow
+  - next_review
+  - idempotency_key
+  - execution_state
+  missing_input_action: Record the gap and block only the dependent decision.
+  schema_pointer: ../records/record.schema.json#/oneOf/14

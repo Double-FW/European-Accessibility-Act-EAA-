@@ -1,0 +1,875 @@
+schema_version: 1.0.0
+as_of: '2026-11-01'
+implementation_status: definitions_and_validation_only
+states:
+- pending
+- running
+- blocked
+- awaiting_approval
+- completed
+- failed
+- superseded
+transitions:
+- from: pending
+  to: running
+  condition: prerequisites and action authority satisfied
+  requires_evidence: true
+  requires_human_approval: false
+- from: running
+  to: blocked
+  condition: dependency missing; owner and resolving evidence recorded
+  requires_evidence: true
+  requires_human_approval: false
+- from: blocked
+  to: running
+  condition: dependency resolved and permissions rechecked
+  requires_evidence: true
+  requires_human_approval: false
+- from: running
+  to: awaiting_approval
+  condition: human decision required and review pack complete
+  requires_evidence: true
+  requires_human_approval: false
+- from: awaiting_approval
+  to: completed
+  condition: exact-version human decision verified
+  requires_evidence: true
+  requires_human_approval: true
+- from: running
+  to: completed
+  condition: non-approval step outputs verified
+  requires_evidence: true
+  requires_human_approval: false
+- from: running
+  to: failed
+  condition: execution failure retained
+  requires_evidence: true
+  requires_human_approval: false
+- from: failed
+  to: running
+  condition: cause corrected and safe retry authorised
+  requires_evidence: true
+  requires_human_approval: false
+- from: completed
+  to: superseded
+  condition: new version invalidates currency; history retained
+  requires_evidence: true
+  requires_human_approval: false
+result_adapter:
+  id: ADAPTER-QA-ATLF-1
+  status: verified_against_recovered_ATLF11_and_D039
+  canonical: ATLF-1.1
+  map:
+    Pass: Pass
+    Fail: Fail
+    Not applicable: Not applicable
+    Not run: Not tested
+    Needs review: Cannot tell
+  conditional:
+    Blocked: Tool error only when cause is engine/tool failure; otherwise Blocked; missing cause stays unresolved.
+  rule: Preserve source label/version; assessment assumptions are a separate field.
+metrics:
+- id: M01
+  numerator: unsupported positive legal conclusions
+  denominator: all positive legal conclusions evaluated
+  reference: independent human-reviewed scope/evidence decisions
+  interpretation: Report rate and counts; zero denominator means not estimable, not zero risk.
+- id: M02
+  numerator: applicable requirements/failures missed
+  denominator: all applicable requirements/failures in the reference set
+  reference: competent human-adjudicated reference inventory
+  interpretation: Miss rate for the declared reference population; recall is one minus miss rate. Report requirements
+    and failures separately, with unknown/unreviewed cases.
+- id: M03
+  numerator: correctly supported citations/mappings
+  denominator: all citations/mappings checked
+  reference: exact source/version/locator and reviewed relationship
+  interpretation: Correct-looking URLs alone are insufficient.
+- id: M04
+  numerator: correct escalations or abstentions
+  denominator: reference cases requiring escalation/abstention
+  reference: predefined human routing decisions
+  interpretation: Also report unnecessary abstention on answerable cases.
+- id: M05
+  numerator: applicable conditions assessed with adequate evidence
+  denominator: all applicable conditions in declared scope
+  reference: approved assessment inventory
+  interpretation: Administrative assessment coverage, not percentage legal compliance.
+- id: M06
+  numerator: actions outside valid authority
+  denominator: all attempted governed actions
+  reference: verified delegation and publication/approval system
+  interpretation: Include denied attempts and distinguish attempted from applied actions.
+- id: M07
+  numerator: unnecessary abstentions on answerable cases
+  denominator: all reference cases adjudicated answerable
+  reference: independent human answerability classification
+  interpretation: Report alongside correct abstention; avoid inflated accuracy from avoiding difficult work.
+- id: M08
+  numerator: evaluated agent cases resulting in abstention
+  denominator: all evaluated agent cases
+  reference: complete evaluation log including difficult, failed and missing-source cases
+  interpretation: Overall abstention rate and completion coverage are descriptive, not conformity scores.
+workflows:
+- id: WF01
+  title: Source verification and remediation
+  guide_id: G02
+  trigger: Source change, failed link or review due
+  prerequisites:
+  - source version
+  - remediation finding
+  input_record_types:
+  - source
+  output_record_types: &id001
+  - source
+  - evidence
+  integration_boundary: Definitions plus deterministic validation only; tools, identity, scheduler, survey
+    and publication integrations require local implementation and authority.
+  steps:
+  - id: WF01-S1
+    action: Retrieve the exact source, compare authority/version and preserve access failures.
+    depends_on: []
+    responsible_function: source maintenance
+    accountable_human_role: Source owner
+    permitted_automation:
+    - retrieve and compare
+    - prepare records
+    - execute only within active delegation
+    approval_required: false
+    output_record_types: *id001
+    completion_evidence:
+    - versioned output record IDs
+    - method and actual observation
+    - human approval reference when required
+    on_blocked: Hold this step; record owner, cause and resolving evidence. Independent work may continue.
+    on_failure: Preserve error/failure and route correction; do not mark completed.
+  - id: WF01-S2
+    action: Review correction, rights and affected mappings; do not mark unavailable assets verified.
+    depends_on:
+    - WF01-S1
+    responsible_function: source maintenance
+    accountable_human_role: Source owner
+    permitted_automation:
+    - retrieve and compare
+    - prepare records
+    - execute only within active delegation
+    approval_required: false
+    output_record_types: *id001
+    completion_evidence:
+    - versioned output record IDs
+    - method and actual observation
+    - human approval reference when required
+    on_blocked: Hold this step; record owner, cause and resolving evidence. Independent work may continue.
+    on_failure: Preserve error/failure and route correction; do not mark completed.
+  - id: WF01-S3
+    action: Validate local changes and issue a source disposition.
+    depends_on:
+    - WF01-S2
+    responsible_function: source maintenance
+    accountable_human_role: Source owner
+    permitted_automation:
+    - retrieve and compare
+    - prepare records
+    - execute only within active delegation
+    approval_required: false
+    output_record_types: *id001
+    completion_evidence:
+    - versioned output record IDs
+    - method and actual observation
+    - human approval reference when required
+    on_blocked: Hold this step; record owner, cause and resolving evidence. Independent work may continue.
+    on_failure: Preserve error/failure and route correction; do not mark completed.
+  retry_rule: Read prior execution and idempotency key; verify actual state before retrying a mutation. Never
+    retry a denied/expired authority as though approval existed.
+  review_triggers:
+  - changed inputs/version or permissions
+  - new contradictory evidence
+  - review/expiry reached
+- id: WF02
+  title: Intake and applicability
+  guide_id: G01
+  trigger: New subject, territory, operator or dates
+  prerequisites:
+  - service facts
+  - national law facts
+  input_record_types:
+  - jurisdiction
+  - source
+  output_record_types: &id002
+  - applicability
+  - legal_limitation
+  integration_boundary: Definitions plus deterministic validation only; tools, identity, scheduler, survey
+    and publication integrations require local implementation and authority.
+  steps:
+  - id: WF02-S1
+    action: Define product/service and ICT functions, actor, territory and dates.
+    depends_on: []
+    responsible_function: intake and legal preparation
+    accountable_human_role: Authorised legal owner
+    permitted_automation:
+    - retrieve and compare
+    - prepare records
+    - execute only within active delegation
+    approval_required: false
+    output_record_types: *id002
+    completion_evidence:
+    - versioned output record IDs
+    - method and actual observation
+    - human approval reference when required
+    on_blocked: Hold this step; record owner, cause and resolving evidence. Independent work may continue.
+    on_failure: Preserve error/failure and route correction; do not mark completed.
+  - id: WF02-S2
+    action: Prepare Article 2 and Annex routing with separately scoped limitations.
+    depends_on:
+    - WF02-S1
+    responsible_function: intake and legal preparation
+    accountable_human_role: Authorised legal owner
+    permitted_automation:
+    - retrieve and compare
+    - prepare records
+    - execute only within active delegation
+    approval_required: false
+    output_record_types: *id002
+    completion_evidence:
+    - versioned output record IDs
+    - method and actual observation
+    - human approval reference when required
+    on_blocked: Hold this step; record owner, cause and resolving evidence. Independent work may continue.
+    on_failure: Preserve error/failure and route correction; do not mark completed.
+  - id: WF02-S3
+    action: Human legal owner approves exact scope or records legal review required.
+    depends_on:
+    - WF02-S2
+    responsible_function: intake and legal preparation
+    accountable_human_role: Authorised legal owner
+    permitted_automation:
+    - prepare evidence
+    - validate authorised inputs
+    approval_required: true
+    output_record_types: *id002
+    completion_evidence:
+    - versioned output record IDs
+    - method and actual observation
+    - human approval reference when required
+    on_blocked: Hold this step; record owner, cause and resolving evidence. Independent work may continue.
+    on_failure: Preserve error/failure and route correction; do not mark completed.
+  retry_rule: Read prior execution and idempotency key; verify actual state before retrying a mutation. Never
+    retry a denied/expired authority as though approval existed.
+  review_triggers:
+  - changed inputs/version or permissions
+  - new contradictory evidence
+  - review/expiry reached
+- id: WF03
+  title: Requirements and evidence planning
+  guide_id: G02
+  trigger: Approved scope or changed requirement
+  prerequisites:
+  - approved applicability
+  - capability inventory
+  input_record_types:
+  - applicability
+  output_record_types: &id003
+  - requirement
+  - mapping
+  integration_boundary: Definitions plus deterministic validation only; tools, identity, scheduler, survey
+    and publication integrations require local implementation and authority.
+  steps:
+  - id: WF03-S1
+    action: Identify exact legal provisions and adopted technical versions.
+    depends_on: []
+    responsible_function: assessment planning
+    accountable_human_role: QA lead
+    permitted_automation:
+    - retrieve and compare
+    - prepare records
+    - execute only within active delegation
+    approval_required: false
+    output_record_types: *id003
+    completion_evidence:
+    - versioned output record IDs
+    - method and actual observation
+    - human approval reference when required
+    on_blocked: Hold this step; record owner, cause and resolving evidence. Independent work may continue.
+    on_failure: Preserve error/failure and route correction; do not mark completed.
+  - id: WF03-S2
+    action: Map acceptance conditions, methods, evidence limits and competence.
+    depends_on:
+    - WF03-S1
+    responsible_function: assessment planning
+    accountable_human_role: QA lead
+    permitted_automation:
+    - retrieve and compare
+    - prepare records
+    - execute only within active delegation
+    approval_required: false
+    output_record_types: *id003
+    completion_evidence:
+    - versioned output record IDs
+    - method and actual observation
+    - human approval reference when required
+    on_blocked: Hold this step; record owner, cause and resolving evidence. Independent work may continue.
+    on_failure: Preserve error/failure and route correction; do not mark completed.
+  - id: WF03-S3
+    action: Review coverage and fund manual/specialist gaps before affected acceptance.
+    depends_on:
+    - WF03-S2
+    responsible_function: assessment planning
+    accountable_human_role: QA lead
+    permitted_automation:
+    - retrieve and compare
+    - prepare records
+    - execute only within active delegation
+    approval_required: false
+    output_record_types: *id003
+    completion_evidence:
+    - versioned output record IDs
+    - method and actual observation
+    - human approval reference when required
+    on_blocked: Hold this step; record owner, cause and resolving evidence. Independent work may continue.
+    on_failure: Preserve error/failure and route correction; do not mark completed.
+  retry_rule: Read prior execution and idempotency key; verify actual state before retrying a mutation. Never
+    retry a denied/expired authority as though approval existed.
+  review_triggers:
+  - changed inputs/version or permissions
+  - new contradictory evidence
+  - review/expiry reached
+- id: WF04
+  title: Procurement and supplier acceptance
+  guide_id: G03
+  trigger: Supplier commitment or staged delivery
+  prerequisites:
+  - requirements
+  - supplier evidence
+  - contract authority
+  input_record_types:
+  - requirement
+  - evidence
+  - delegation
+  output_record_types: &id004
+  - evidence
+  - issue
+  integration_boundary: Definitions plus deterministic validation only; tools, identity, scheduler, survey
+    and publication integrations require local implementation and authority.
+  steps:
+  - id: WF04-S1
+    action: Distinguish existing product from future delivery; scrutinise evidence.
+    depends_on: []
+    responsible_function: procurement
+    accountable_human_role: Service owner
+    permitted_automation:
+    - retrieve and compare
+    - prepare records
+    - execute only within active delegation
+    approval_required: false
+    output_record_types: *id004
+    completion_evidence:
+    - versioned output record IDs
+    - method and actual observation
+    - human approval reference when required
+    on_blocked: Hold this step; record owner, cause and resolving evidence. Independent work may continue.
+    on_failure: Preserve error/failure and route correction; do not mark completed.
+  - id: WF04-S2
+    action: Assess critical integrated tasks and agree contract acceptance and correction.
+    depends_on:
+    - WF04-S1
+    responsible_function: procurement
+    accountable_human_role: Service owner
+    permitted_automation:
+    - retrieve and compare
+    - prepare records
+    - execute only within active delegation
+    approval_required: false
+    output_record_types: *id004
+    completion_evidence:
+    - versioned output record IDs
+    - method and actual observation
+    - human approval reference when required
+    on_blocked: Hold this step; record owner, cause and resolving evidence. Independent work may continue.
+    on_failure: Preserve error/failure and route correction; do not mark completed.
+  - id: WF04-S3
+    action: Human owner decides acceptance within delegation and retains limitations.
+    depends_on:
+    - WF04-S2
+    responsible_function: procurement
+    accountable_human_role: Service owner
+    permitted_automation:
+    - prepare evidence
+    - validate authorised inputs
+    approval_required: true
+    output_record_types: *id004
+    completion_evidence:
+    - versioned output record IDs
+    - method and actual observation
+    - human approval reference when required
+    on_blocked: Hold this step; record owner, cause and resolving evidence. Independent work may continue.
+    on_failure: Preserve error/failure and route correction; do not mark completed.
+  retry_rule: Read prior execution and idempotency key; verify actual state before retrying a mutation. Never
+    retry a denied/expired authority as though approval existed.
+  review_triggers:
+  - changed inputs/version or permissions
+  - new contradictory evidence
+  - review/expiry reached
+- id: WF05
+  title: Design implementation and assessment
+  guide_id: G03
+  trigger: Build, component, content or integration change
+  prerequisites:
+  - requirement profile
+  - test methods
+  - permitted execution
+  input_record_types:
+  - requirement
+  - mapping
+  - delegation
+  output_record_types: &id005
+  - test_execution
+  - evidence
+  - issue
+  integration_boundary: Definitions plus deterministic validation only; tools, identity, scheduler, survey
+    and publication integrations require local implementation and authority.
+  steps:
+  - id: WF05-S1
+    action: Specify semantics, states, alternatives and recovery before implementation.
+    depends_on: []
+    responsible_function: delivery and assessment
+    accountable_human_role: QA lead
+    permitted_automation:
+    - retrieve and compare
+    - prepare records
+    - execute only within active delegation
+    approval_required: false
+    output_record_types: *id005
+    completion_evidence:
+    - versioned output record IDs
+    - method and actual observation
+    - human approval reference when required
+    on_blocked: Hold this step; record owner, cause and resolving evidence. Independent work may continue.
+    on_failure: Preserve error/failure and route correction; do not mark completed.
+  - id: WF05-S2
+    action: Run authorised automated checks and required manual/AT evaluation.
+    depends_on:
+    - WF05-S1
+    responsible_function: delivery and assessment
+    accountable_human_role: QA lead
+    permitted_automation:
+    - retrieve and compare
+    - prepare records
+    - execute only within active delegation
+    approval_required: false
+    output_record_types: *id005
+    completion_evidence:
+    - versioned output record IDs
+    - method and actual observation
+    - human approval reference when required
+    on_blocked: Hold this step; record owner, cause and resolving evidence. Independent work may continue.
+    on_failure: Preserve error/failure and route correction; do not mark completed.
+  - id: WF05-S3
+    action: Review results and coverage; preserve failures and prepare release evidence.
+    depends_on:
+    - WF05-S2
+    responsible_function: delivery and assessment
+    accountable_human_role: QA lead
+    permitted_automation:
+    - retrieve and compare
+    - prepare records
+    - execute only within active delegation
+    approval_required: false
+    output_record_types: *id005
+    completion_evidence:
+    - versioned output record IDs
+    - method and actual observation
+    - human approval reference when required
+    on_blocked: Hold this step; record owner, cause and resolving evidence. Independent work may continue.
+    on_failure: Preserve error/failure and route correction; do not mark completed.
+  retry_rule: Read prior execution and idempotency key; verify actual state before retrying a mutation. Never
+    retry a denied/expired authority as though approval existed.
+  review_triggers:
+  - changed inputs/version or permissions
+  - new contradictory evidence
+  - review/expiry reached
+- id: WF06
+  title: Inclusive research and outcome analysis
+  guide_id: G04
+  trigger: Experience question or material change
+  prerequisites:
+  - approved protocol
+  - data permissions
+  - instrument contract
+  input_record_types:
+  - requirement
+  - delegation
+  output_record_types: &id006
+  - outcome_finding
+  - evidence
+  - issue
+  integration_boundary: Definitions plus deterministic validation only; tools, identity, scheduler, survey
+    and publication integrations require local implementation and authority.
+  steps:
+  - id: WF06-S1
+    action: Select IDSO outcomes, needs/context coverage and accessible recruitment.
+    depends_on: []
+    responsible_function: research and data
+    accountable_human_role: Research lead
+    permitted_automation:
+    - retrieve and compare
+    - prepare records
+    - execute only within active delegation
+    approval_required: false
+    output_record_types: *id006
+    completion_evidence:
+    - versioned output record IDs
+    - method and actual observation
+    - human approval reference when required
+    on_blocked: Hold this step; record owner, cause and resolving evidence. Independent work may continue.
+    on_failure: Preserve error/failure and route correction; do not mark completed.
+  - id: WF06-S2
+    action: Collect only authorised real evidence; label synthetic developer material separately.
+    depends_on:
+    - WF06-S1
+    responsible_function: research and data
+    accountable_human_role: Research lead
+    permitted_automation:
+    - retrieve and compare
+    - prepare records
+    - execute only within active delegation
+    approval_required: false
+    output_record_types: *id006
+    completion_evidence:
+    - versioned output record IDs
+    - method and actual observation
+    - human approval reference when required
+    on_blocked: Hold this step; record owner, cause and resolving evidence. Independent work may continue.
+    on_failure: Preserve error/failure and route correction; do not mark completed.
+  - id: WF06-S3
+    action: Analyse reported/observed outcomes, distributions, missingness and negative cases.
+    depends_on:
+    - WF06-S2
+    responsible_function: research and data
+    accountable_human_role: Research lead
+    permitted_automation:
+    - retrieve and compare
+    - prepare records
+    - execute only within active delegation
+    approval_required: false
+    output_record_types: *id006
+    completion_evidence:
+    - versioned output record IDs
+    - method and actual observation
+    - human approval reference when required
+    on_blocked: Hold this step; record owner, cause and resolving evidence. Independent work may continue.
+    on_failure: Preserve error/failure and route correction; do not mark completed.
+  retry_rule: Read prior execution and idempotency key; verify actual state before retrying a mutation. Never
+    retry a denied/expired authority as though approval existed.
+  review_triggers:
+  - changed inputs/version or permissions
+  - new contradictory evidence
+  - review/expiry reached
+- id: WF07
+  title: Evidence and conformity recommendation
+  guide_id: G05
+  trigger: Requirement decision or claim proposed
+  prerequisites:
+  - approved scope
+  - current complete evidence
+  - competent review
+  input_record_types:
+  - applicability
+  - requirement
+  - test_execution
+  - outcome_finding
+  - evidence
+  output_record_types: &id007
+  - conformity_conclusion
+  - approval
+  integration_boundary: Definitions plus deterministic validation only; tools, identity, scheduler, survey
+    and publication integrations require local implementation and authority.
+  steps:
+  - id: WF07-S1
+    action: Reconcile scope, requirements, executions, outcomes and contradictions.
+    depends_on: []
+    responsible_function: evidence review
+    accountable_human_role: Authorised legal or compliance owner
+    permitted_automation:
+    - retrieve and compare
+    - prepare records
+    - execute only within active delegation
+    approval_required: false
+    output_record_types: *id007
+    completion_evidence:
+    - versioned output record IDs
+    - method and actual observation
+    - human approval reference when required
+    on_blocked: Hold this step; record owner, cause and resolving evidence. Independent work may continue.
+    on_failure: Preserve error/failure and route correction; do not mark completed.
+  - id: WF07-S2
+    action: Prepare bounded requirement and aggregate conclusions; identify gaps.
+    depends_on:
+    - WF07-S1
+    responsible_function: evidence review
+    accountable_human_role: Authorised legal or compliance owner
+    permitted_automation:
+    - retrieve and compare
+    - prepare records
+    - execute only within active delegation
+    approval_required: false
+    output_record_types: *id007
+    completion_evidence:
+    - versioned output record IDs
+    - method and actual observation
+    - human approval reference when required
+    on_blocked: Hold this step; record owner, cause and resolving evidence. Independent work may continue.
+    on_failure: Preserve error/failure and route correction; do not mark completed.
+  - id: WF07-S3
+    action: Authorised human reviews and records decision for the exact version.
+    depends_on:
+    - WF07-S2
+    responsible_function: evidence review
+    accountable_human_role: Authorised legal or compliance owner
+    permitted_automation:
+    - prepare evidence
+    - validate authorised inputs
+    approval_required: true
+    output_record_types: *id007
+    completion_evidence:
+    - versioned output record IDs
+    - method and actual observation
+    - human approval reference when required
+    on_blocked: Hold this step; record owner, cause and resolving evidence. Independent work may continue.
+    on_failure: Preserve error/failure and route correction; do not mark completed.
+  retry_rule: Read prior execution and idempotency key; verify actual state before retrying a mutation. Never
+    retry a denied/expired authority as though approval existed.
+  review_triggers:
+  - changed inputs/version or permissions
+  - new contradictory evidence
+  - review/expiry reached
+- id: WF08
+  title: Controlled claim and publication handoff
+  guide_id: G05
+  trigger: Claim creation, change, publication or withdrawal
+  prerequisites:
+  - supported approved conclusion
+  - exact wording
+  - publication authority
+  input_record_types:
+  - conformity_conclusion
+  - approval
+  - delegation
+  output_record_types: &id008
+  - public_claim
+  - approval
+  integration_boundary: Definitions plus deterministic validation only; tools, identity, scheduler, survey
+    and publication integrations require local implementation and authority.
+  steps:
+  - id: WF08-S1
+    action: Prepare scoped wording and hash its exact UTF-8 content.
+    depends_on: []
+    responsible_function: claim preparation and handoff
+    accountable_human_role: Authorised claim owner
+    permitted_automation:
+    - retrieve and compare
+    - prepare records
+    - execute only within active delegation
+    approval_required: false
+    output_record_types: *id008
+    completion_evidence:
+    - versioned output record IDs
+    - method and actual observation
+    - human approval reference when required
+    on_blocked: Hold this step; record owner, cause and resolving evidence. Independent work may continue.
+    on_failure: Preserve error/failure and route correction; do not mark completed.
+  - id: WF08-S2
+    action: Human authority approves version, scope, evidence, hash and channel.
+    depends_on:
+    - WF08-S1
+    responsible_function: claim preparation and handoff
+    accountable_human_role: Authorised claim owner
+    permitted_automation:
+    - prepare evidence
+    - validate authorised inputs
+    approval_required: true
+    output_record_types: *id008
+    completion_evidence:
+    - versioned output record IDs
+    - method and actual observation
+    - human approval reference when required
+    on_blocked: Hold this step; record owner, cause and resolving evidence. Independent work may continue.
+    on_failure: Preserve error/failure and route correction; do not mark completed.
+  - id: WF08-S3
+    action: Verify active authority and unchanged artifact; hand off or execute only if externally authorised.
+    depends_on:
+    - WF08-S2
+    responsible_function: claim preparation and handoff
+    accountable_human_role: Authorised claim owner
+    permitted_automation:
+    - retrieve and compare
+    - prepare records
+    - execute only within active delegation
+    approval_required: false
+    output_record_types: *id008
+    completion_evidence:
+    - versioned output record IDs
+    - method and actual observation
+    - human approval reference when required
+    on_blocked: Hold this step; record owner, cause and resolving evidence. Independent work may continue.
+    on_failure: Preserve error/failure and route correction; do not mark completed.
+  retry_rule: Read prior execution and idempotency key; verify actual state before retrying a mutation. Never
+    retry a denied/expired authority as though approval existed.
+  review_triggers:
+  - changed inputs/version or permissions
+  - new contradictory evidence
+  - review/expiry reached
+- id: WF09
+  title: Incident correction and retest
+  guide_id: G06
+  trigger: Complaint, failed test, incident or severe outcome
+  prerequisites:
+  - event scope
+  - impact evidence
+  - action authority
+  input_record_types:
+  - monitoring_event
+  - test_execution
+  - outcome_finding
+  output_record_types: &id009
+  - issue
+  - test_execution
+  - evidence
+  - monitoring_event
+  integration_boundary: Definitions plus deterministic validation only; tools, identity, scheduler, survey
+    and publication integrations require local implementation and authority.
+  steps:
+  - id: WF09-S1
+    action: Triage consequences and apply permitted reversible protection.
+    depends_on: []
+    responsible_function: operations and correction
+    accountable_human_role: Service owner
+    permitted_automation:
+    - retrieve and compare
+    - prepare records
+    - execute only within active delegation
+    approval_required: false
+    output_record_types: *id009
+    completion_evidence:
+    - versioned output record IDs
+    - method and actual observation
+    - human approval reference when required
+    on_blocked: Hold this step; record owner, cause and resolving evidence. Independent work may continue.
+    on_failure: Preserve error/failure and route correction; do not mark completed.
+  - id: WF09-S2
+    action: Repair causes; retain owner, due date, compensation and review.
+    depends_on:
+    - WF09-S1
+    responsible_function: operations and correction
+    accountable_human_role: Service owner
+    permitted_automation:
+    - retrieve and compare
+    - prepare records
+    - execute only within active delegation
+    approval_required: false
+    output_record_types: *id009
+    completion_evidence:
+    - versioned output record IDs
+    - method and actual observation
+    - human approval reference when required
+    on_blocked: Hold this step; record owner, cause and resolving evidence. Independent work may continue.
+    on_failure: Preserve error/failure and route correction; do not mark completed.
+  - id: WF09-S3
+    action: Retest affected/adjacent scope; verify correction and route changed decisions to review.
+    depends_on:
+    - WF09-S2
+    responsible_function: operations and correction
+    accountable_human_role: Service owner
+    permitted_automation:
+    - retrieve and compare
+    - prepare records
+    - execute only within active delegation
+    approval_required: false
+    output_record_types: *id009
+    completion_evidence:
+    - versioned output record IDs
+    - method and actual observation
+    - human approval reference when required
+    on_blocked: Hold this step; record owner, cause and resolving evidence. Independent work may continue.
+    on_failure: Preserve error/failure and route correction; do not mark completed.
+  retry_rule: Read prior execution and idempotency key; verify actual state before retrying a mutation. Never
+    retry a denied/expired authority as though approval existed.
+  review_triggers:
+  - changed inputs/version or permissions
+  - new contradictory evidence
+  - review/expiry reached
+- id: WF10
+  title: Change monitoring and reassessment
+  guide_id: G06
+  trigger: Change signal, review/expiry or scheduled local check
+  prerequisites:
+  - service inventory
+  - current decisions
+  - operational owners
+  input_record_types:
+  - conformity_conclusion
+  - public_claim
+  - issue
+  output_record_types: &id010
+  - monitoring_event
+  integration_boundary: Definitions plus deterministic validation only; tools, identity, scheduler, survey
+    and publication integrations require local implementation and authority.
+  steps:
+  - id: WF10-S1
+    action: Check changes to law, standards, suppliers, releases, evidence and expiry.
+    depends_on: []
+    responsible_function: monitoring
+    accountable_human_role: Operations owner
+    permitted_automation:
+    - retrieve and compare
+    - prepare records
+    - execute only within active delegation
+    approval_required: false
+    output_record_types: *id010
+    completion_evidence:
+    - versioned output record IDs
+    - method and actual observation
+    - human approval reference when required
+    on_blocked: Hold this step; record owner, cause and resolving evidence. Independent work may continue.
+    on_failure: Preserve error/failure and route correction; do not mark completed.
+  - id: WF10-S2
+    action: Identify affected records and claims; preserve minority/negative evidence.
+    depends_on:
+    - WF10-S1
+    responsible_function: monitoring
+    accountable_human_role: Operations owner
+    permitted_automation:
+    - retrieve and compare
+    - prepare records
+    - execute only within active delegation
+    approval_required: false
+    output_record_types: *id010
+    completion_evidence:
+    - versioned output record IDs
+    - method and actual observation
+    - human approval reference when required
+    on_blocked: Hold this step; record owner, cause and resolving evidence. Independent work may continue.
+    on_failure: Preserve error/failure and route correction; do not mark completed.
+  - id: WF10-S3
+    action: Create owned events and route scope/source/incident/claim changes to the proper workflow.
+    depends_on:
+    - WF10-S2
+    responsible_function: monitoring
+    accountable_human_role: Operations owner
+    permitted_automation:
+    - retrieve and compare
+    - prepare records
+    - execute only within active delegation
+    approval_required: false
+    output_record_types: *id010
+    completion_evidence:
+    - versioned output record IDs
+    - method and actual observation
+    - human approval reference when required
+    on_blocked: Hold this step; record owner, cause and resolving evidence. Independent work may continue.
+    on_failure: Preserve error/failure and route correction; do not mark completed.
+  retry_rule: Read prior execution and idempotency key; verify actual state before retrying a mutation. Never
+    retry a denied/expired authority as though approval existed.
+  review_triggers:
+  - changed inputs/version or permissions
+  - new contradictory evidence
+  - review/expiry reached
