@@ -1,6 +1,7 @@
 ---
 title: "European Accessibility Act — complete repository RAG reference"
 prepared: "2026-11-08"
+updated: "2026-11-11"
 language: "en-GB"
 document_type: "standalone_markdown_rag_reference"
 source_repository: "https://github.com/Double-FW/European-Accessibility-Act-EAA-"
@@ -59,42 +60,44 @@ The full external Directive, EN standards, national measures and linked Double F
 
 ## Source inventory and completeness verification
 
+**Navigation maintenance, 11 November 2026:** Source-inventory links now use the descriptive headings' generated Markdown anchors. The original short HTML anchors remain available for existing links. S024 uses an HTML code block with escaped characters so the embedded checker's literal backtick strings are displayed as source text rather than counted as Markdown fences by the repository checker. Rendering that block, or decoding its HTML entities once, recovers the complete original Python text. No source content has been removed or its code changed; this maintenance does not refresh the underlying snapshot or legal verification.
+
 **Repository snapshot:** `3545319962c0336163f5fbab1942ee5aefd878a2`  
 **Retrieved:** 8 November 2026  
 **Coverage:** 26 of 26 tracked files, **335,004 original UTF-8 bytes**.
 
 The recursive inventory reported no truncation. Each file was fetched by exact blob SHA and matched its inventory byte count and Git blob hash. Every full body was checked for inclusion after compilation. This verifies source preservation, not the truth, legal currency or empirical validity of every source claim.
 
-Recognised repository-relative inline Markdown destinations are resolved to the pinned GitHub snapshot, including original section links. Source wording, tables, examples, schemas and code remain intact; byte/hash verification refers to fetched originals before link resolution. Reference-style/code-example destinations retain their original source context and can be resolved using each source URL. No separate source-file folder or archive is required.
+Recognised repository-relative inline Markdown destinations are resolved to the pinned GitHub snapshot, including original section links. Source wording, tables, examples, schemas and code remain intact; byte/hash verification refers to fetched originals before link resolution and display-only HTML encoding. Reference-style/code-example destinations retain their original source context and can be resolved using each source URL. No separate source-file folder or archive is required.
 
 | Source ID | File at pinned revision | Source role | Original bytes | Original blob SHA |
 | --- | --- | --- | ---: | --- |
-| [S001](#s001) | [EAA_Plain_English_Breakdown_and_Evidence_Guide.md](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/EAA_Plain_English_Breakdown_and_Evidence_Guide.md) | Primary explanatory legal/evidence guide | 64,769 | `91682f812638682b0b5defdc383ce1183a2da847` |
-| [S002](#s002) | [README.md](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/README.md) | Repository introduction and governance context | 4,576 | `1a0ccf96c85bd3bc78eb8c9b7b0bb7dc8765e6cb` |
-| [S003](#s003) | [AGENTS.md](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/AGENTS.md) | Repository introduction and governance context | 12,360 | `b030af6c2ff9bb1e0cadf8e2dc3bfa42cabb0064` |
-| [S004](#s004) | [control/document-index.yaml](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/control/document-index.yaml) | Source/adoption/standards/change control context | 4,354 | `9b551d46f9739fed39c678c5111af7dfb31327c0` |
-| [S005](#s005) | [control/standards-status.yaml](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/control/standards-status.yaml) | Source/adoption/standards/change control context | 2,116 | `83464561fc965ef09c9633b3bd073b8bef6ce304` |
-| [S006](#s006) | [control/source-register.yaml](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/control/source-register.yaml) | Source/adoption/standards/change control context | 24,213 | `c96d2bda9ad8cfef4d13014098167e5453712103` |
-| [S007](#s007) | [guides/README.md](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/guides/README.md) | Repository introduction and governance context | 1,664 | `1b7fd0125f0a0e2db79300cdfbf3cbe9e686a59d` |
-| [S008](#s008) | [guides/01-scope-and-applicability.md](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/guides/01-scope-and-applicability.md) | Draft practitioner guide; local adoption required | 5,308 | `a7f74f63292433bacce20509b1974d7db501f203` |
-| [S009](#s009) | [guides/02-requirements-and-assessment.md](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/guides/02-requirements-and-assessment.md) | Draft practitioner guide; local adoption required | 5,539 | `742e666f45fd6674cc17cf3b1764f91e4b497d95` |
-| [S010](#s010) | [guides/03-delivery-and-procurement.md](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/guides/03-delivery-and-procurement.md) | Draft practitioner guide; local adoption required | 6,020 | `e5f7d3db2b546b649dcf0489bce1db952137e271` |
-| [S011](#s011) | [guides/04-customer-outcomes-and-research.md](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/guides/04-customer-outcomes-and-research.md) | Draft practitioner guide; local adoption required | 5,922 | `e6a79ef814d2a70d1419dc4bca4cb034f20d95fb` |
-| [S012](#s012) | [guides/05-evidence-conformity-and-claims.md](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/guides/05-evidence-conformity-and-claims.md) | Draft practitioner guide; local adoption required | 6,149 | `659896254b3f35eddc1349f062d8e47ecdd47e1c` |
-| [S013](#s013) | [guides/06-monitoring-and-corrective-action.md](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/guides/06-monitoring-and-corrective-action.md) | Draft practitioner guide; local adoption required | 6,230 | `7fdea3ca9db44019d9d8dabf8ba07bd4391db8c2` |
-| [S014](#s014) | [records/README.md](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/records/README.md) | Record documentation/schema/templates, not real approval/evidence | 1,725 | `24a81744041feb5ff91f5c024e3397a9b5870320` |
-| [S015](#s015) | [records/record.schema.json](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/records/record.schema.json) | Record documentation/schema/templates, not real approval/evidence | 39,126 | `472cbbe2887e6e2e67919b90ec90f9fdb25cc9bb` |
-| [S016](#s016) | [records/templates.yaml](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/records/templates.yaml) | Record documentation/schema/templates, not real approval/evidence | 5,704 | `ff3c2eebd59ae0a1e70520b1127c2428bc22d8d3` |
-| [S017](#s017) | [workflows/workflow.schema.json](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/workflows/workflow.schema.json) | Workflow definitions/schema, not an operating integration | 8,580 | `dd768e192cb0188efa4ddfcbf1bb99b0bde6cbf3` |
-| [S018](#s018) | [workflows/workflows.yaml](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/workflows/workflows.yaml) | Workflow definitions/schema, not an operating integration | 34,253 | `75b4599eb784cc3c422bc3bbc844e67d078c6756` |
-| [S019](#s019) | [ANNEX1-EAA-REQUIREMENT-MATRIX.md](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/ANNEX1-EAA-REQUIREMENT-MATRIX.md) | Planning map with numbering/coverage warning; not legal authority | 9,352 | `d81dee469be00d9be7b285520ec608212e496e45` |
-| [S020](#s020) | [control/remediation-register.yaml](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/control/remediation-register.yaml) | Source/adoption/standards/change control context | 20,763 | `a1302124ab22ac4830394d9cb0a9b3bf72b76861` |
-| [S021](#s021) | [control/validation-report.md](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/control/validation-report.md) | Source-authored validation report; not rerun here | 4,722 | `a73f29cb4502aa7877268485584c0d45795d20ec` |
-| [S022](#s022) | [validation/README.md](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/validation/README.md) | Repository validation documentation/code; not product assessment | 1,625 | `bfc3c67d698bcec4db4ba1a2880744cb06553623` |
-| [S023](#s023) | [validation/cases.yaml](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/validation/cases.yaml) | Synthetic developer material, not real evidence | 12,590 | `2994ea82eb81fd79d4528835194ac28e30b83acb` |
-| [S024](#s024) | [validation/check_repository.py](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/validation/check_repository.py) | Repository validation documentation/code; not product assessment | 23,908 | `e801d3f5a0e063b3a649902d265743918d76ff74` |
-| [S025](#s025) | [examples/synthetic-service-cycle.yaml](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/examples/synthetic-service-cycle.yaml) | Synthetic developer material, not real evidence | 22,370 | `ab3f173feefcc851c60dc386878d8cfe4f51d77b` |
-| [S026](#s026) | [LICENSE](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/LICENSE) | Original rights notice; inconsistent README statement retained | 1,066 | `3149d6917c830929b7a4b29366a0ab796207731c` |
+| [S001](#s001--eaa_plain_english_breakdown_and_evidence_guidemd) | [EAA_Plain_English_Breakdown_and_Evidence_Guide.md](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/EAA_Plain_English_Breakdown_and_Evidence_Guide.md) | Primary explanatory legal/evidence guide | 64,769 | `91682f812638682b0b5defdc383ce1183a2da847` |
+| [S002](#s002--readmemd) | [README.md](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/README.md) | Repository introduction and governance context | 4,576 | `1a0ccf96c85bd3bc78eb8c9b7b0bb7dc8765e6cb` |
+| [S003](#s003--agentsmd) | [AGENTS.md](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/AGENTS.md) | Repository introduction and governance context | 12,360 | `b030af6c2ff9bb1e0cadf8e2dc3bfa42cabb0064` |
+| [S004](#s004--controldocument-indexyaml) | [control/document-index.yaml](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/control/document-index.yaml) | Source/adoption/standards/change control context | 4,354 | `9b551d46f9739fed39c678c5111af7dfb31327c0` |
+| [S005](#s005--controlstandards-statusyaml) | [control/standards-status.yaml](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/control/standards-status.yaml) | Source/adoption/standards/change control context | 2,116 | `83464561fc965ef09c9633b3bd073b8bef6ce304` |
+| [S006](#s006--controlsource-registeryaml) | [control/source-register.yaml](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/control/source-register.yaml) | Source/adoption/standards/change control context | 24,213 | `c96d2bda9ad8cfef4d13014098167e5453712103` |
+| [S007](#s007--guidesreadmemd) | [guides/README.md](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/guides/README.md) | Repository introduction and governance context | 1,664 | `1b7fd0125f0a0e2db79300cdfbf3cbe9e686a59d` |
+| [S008](#s008--guides01-scope-and-applicabilitymd) | [guides/01-scope-and-applicability.md](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/guides/01-scope-and-applicability.md) | Draft practitioner guide; local adoption required | 5,308 | `a7f74f63292433bacce20509b1974d7db501f203` |
+| [S009](#s009--guides02-requirements-and-assessmentmd) | [guides/02-requirements-and-assessment.md](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/guides/02-requirements-and-assessment.md) | Draft practitioner guide; local adoption required | 5,539 | `742e666f45fd6674cc17cf3b1764f91e4b497d95` |
+| [S010](#s010--guides03-delivery-and-procurementmd) | [guides/03-delivery-and-procurement.md](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/guides/03-delivery-and-procurement.md) | Draft practitioner guide; local adoption required | 6,020 | `e5f7d3db2b546b649dcf0489bce1db952137e271` |
+| [S011](#s011--guides04-customer-outcomes-and-researchmd) | [guides/04-customer-outcomes-and-research.md](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/guides/04-customer-outcomes-and-research.md) | Draft practitioner guide; local adoption required | 5,922 | `e6a79ef814d2a70d1419dc4bca4cb034f20d95fb` |
+| [S012](#s012--guides05-evidence-conformity-and-claimsmd) | [guides/05-evidence-conformity-and-claims.md](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/guides/05-evidence-conformity-and-claims.md) | Draft practitioner guide; local adoption required | 6,149 | `659896254b3f35eddc1349f062d8e47ecdd47e1c` |
+| [S013](#s013--guides06-monitoring-and-corrective-actionmd) | [guides/06-monitoring-and-corrective-action.md](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/guides/06-monitoring-and-corrective-action.md) | Draft practitioner guide; local adoption required | 6,230 | `7fdea3ca9db44019d9d8dabf8ba07bd4391db8c2` |
+| [S014](#s014--recordsreadmemd) | [records/README.md](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/records/README.md) | Record documentation/schema/templates, not real approval/evidence | 1,725 | `24a81744041feb5ff91f5c024e3397a9b5870320` |
+| [S015](#s015--recordsrecordschemajson) | [records/record.schema.json](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/records/record.schema.json) | Record documentation/schema/templates, not real approval/evidence | 39,126 | `472cbbe2887e6e2e67919b90ec90f9fdb25cc9bb` |
+| [S016](#s016--recordstemplatesyaml) | [records/templates.yaml](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/records/templates.yaml) | Record documentation/schema/templates, not real approval/evidence | 5,704 | `ff3c2eebd59ae0a1e70520b1127c2428bc22d8d3` |
+| [S017](#s017--workflowsworkflowschemajson) | [workflows/workflow.schema.json](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/workflows/workflow.schema.json) | Workflow definitions/schema, not an operating integration | 8,580 | `dd768e192cb0188efa4ddfcbf1bb99b0bde6cbf3` |
+| [S018](#s018--workflowsworkflowsyaml) | [workflows/workflows.yaml](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/workflows/workflows.yaml) | Workflow definitions/schema, not an operating integration | 34,253 | `75b4599eb784cc3c422bc3bbc844e67d078c6756` |
+| [S019](#s019--annex1-eaa-requirement-matrixmd) | [ANNEX1-EAA-REQUIREMENT-MATRIX.md](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/ANNEX1-EAA-REQUIREMENT-MATRIX.md) | Planning map with numbering/coverage warning; not legal authority | 9,352 | `d81dee469be00d9be7b285520ec608212e496e45` |
+| [S020](#s020--controlremediation-registeryaml) | [control/remediation-register.yaml](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/control/remediation-register.yaml) | Source/adoption/standards/change control context | 20,763 | `a1302124ab22ac4830394d9cb0a9b3bf72b76861` |
+| [S021](#s021--controlvalidation-reportmd) | [control/validation-report.md](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/control/validation-report.md) | Source-authored validation report; not rerun here | 4,722 | `a73f29cb4502aa7877268485584c0d45795d20ec` |
+| [S022](#s022--validationreadmemd) | [validation/README.md](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/validation/README.md) | Repository validation documentation/code; not product assessment | 1,625 | `bfc3c67d698bcec4db4ba1a2880744cb06553623` |
+| [S023](#s023--validationcasesyaml) | [validation/cases.yaml](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/validation/cases.yaml) | Synthetic developer material, not real evidence | 12,590 | `2994ea82eb81fd79d4528835194ac28e30b83acb` |
+| [S024](#s024--validationcheck_repositorypy) | [validation/check_repository.py](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/validation/check_repository.py) | Repository validation documentation/code; not product assessment | 23,908 | `e801d3f5a0e063b3a649902d265743918d76ff74` |
+| [S025](#s025--examplessynthetic-service-cycleyaml) | [examples/synthetic-service-cycle.yaml](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/examples/synthetic-service-cycle.yaml) | Synthetic developer material, not real evidence | 22,370 | `ab3f173feefcc851c60dc386878d8cfe4f51d77b` |
+| [S026](#s026--license) | [LICENSE](https://github.com/Double-FW/European-Accessibility-Act-EAA-/blob/3545319962c0336163f5fbab1942ee5aefd878a2/LICENSE) | Original rights notice; inconsistent README statement retained | 1,066 | `3149d6917c830929b7a4b29366a0ab796207731c` |
 
 ## Original-heading lookup
 
@@ -7415,8 +7418,7 @@ cases:
 **Original UTF-8 bytes:** 23,908  
 **Source role:** Repository validation documentation/code; not product assessment
 
-````python
-#!/usr/bin/env python3
+<pre><code>#!/usr/bin/env python3
 """Read-only repository checks and synthetic fixtures. No external requests or approvals."""
 import argparse
 import copy
@@ -7457,7 +7459,7 @@ def record_errors(records, schema, sources, workflow_ids, as_of):
     validator = Draft202012Validator(schema, format_checker=FormatChecker())
     index = {}
     for record in records:
-        rid = record.get('id', '<missing>') if isinstance(record, dict) else '<non-object>'
+        rid = record.get('id', '&lt;missing&gt;') if isinstance(record, dict) else '&lt;non-object&gt;'
         found = list(validator.iter_errors(record))
         if found:
             for e in found[:4]:
@@ -7529,12 +7531,12 @@ def record_errors(records, schema, sources, workflow_ids, as_of):
                 err('EXCEPTION_EXPIRY', rid, 'Temporary exception must expire.')
             if d['resolution'] == 'accepted_unresolved' and not r.get('approval_ref'):
                 err('APPROVAL_REQUIRED', rid, 'Accepted unresolved issue needs authorised decision.')
-            if d['resolution'] == 'accepted_unresolved' and d['expires_on'] and d['expires_on'] < as_of:
+            if d['resolution'] == 'accepted_unresolved' and d['expires_on'] and d['expires_on'] &lt; as_of:
                 err('EXPIRED_EXCEPTION', rid, 'Accepted exception has expired.')
         if kind == 'legal_limitation':
             for target in d['affected_requirements']: ref(r, target, {'requirement'})
         if kind == 'delegation':
-            if d['valid_from'] > d['valid_until']: err('DATE_ORDER', rid, 'Delegation validity is reversed.')
+            if d['valid_from'] &gt; d['valid_until']: err('DATE_ORDER', rid, 'Delegation validity is reversed.')
         if kind == 'approval':
             target = ref(r, d['target_ref'])
             if target:
@@ -7544,7 +7546,7 @@ def record_errors(records, schema, sources, workflow_ids, as_of):
                     err('SYNTHETIC_LEAK', rid, 'Approval and target synthetic status must agree.')
                 if target['kind'] == 'public_claim' and target['data']['artifact_hash'] != d['artifact_hash']:
                     err('APPROVAL_BINDING', rid, 'Approved claim hash differs.')
-            if d['approved_on'] > d['valid_until']: err('DATE_ORDER', rid, 'Approval validity is reversed.')
+            if d['approved_on'] &gt; d['valid_until']: err('DATE_ORDER', rid, 'Approval validity is reversed.')
             if d['delegation_ref']: ref(r, d['delegation_ref'], {'delegation'})
         if kind == 'conformity_conclusion':
             app = ref(r, d['applicability_ref'], {'applicability'})
@@ -7587,7 +7589,7 @@ def record_errors(records, schema, sources, workflow_ids, as_of):
                 else:
                     dd=delegation['data']
                     op='publish_claim' if d['publication_state']=='published' else 'handoff_claim'
-                    if delegation['status']!='approved' or dd['revoked'] or not dd['valid_from']<=as_of<=dd['valid_until'] or op not in dd['operations'] or delegation['scope']!=r['scope']:
+                    if delegation['status']!='approved' or dd['revoked'] or not dd['valid_from']&lt;=as_of&lt;=dd['valid_until'] or op not in dd['operations'] or delegation['scope']!=r['scope']:
                         err('PUBLICATION_AUTHORITY', rid, 'Operation outside active delegation, validity or scope.')
         if kind == 'monitoring_event':
             for target in d['affected_refs']: ref(r, target)
@@ -7597,7 +7599,7 @@ def record_errors(records, schema, sources, workflow_ids, as_of):
             if not approval: err('APPROVAL_REQUIRED', rid, 'Missing approval record.')
             else:
                 ad=approval['data']
-                if approval['status']!='recorded' or ad['target_ref']!=rid or ad['target_version']!=r['version'] or ad['approved_scope']!=r['scope'] or not ad['approved_on']<=as_of<=ad['valid_until']:
+                if approval['status']!='recorded' or ad['target_ref']!=rid or ad['target_version']!=r['version'] or ad['approved_scope']!=r['scope'] or not ad['approved_on']&lt;=as_of&lt;=ad['valid_until']:
                     err('APPROVAL_BINDING', rid, 'Approval missing, inactive, expired or for a different target/version/scope.')
     return errors
 
@@ -7641,7 +7643,7 @@ def transition_errors(event, workflows):
 
 def anchors(text):
     used={}; result=set()
-    text=re.sub(r'```.*?```','',text,flags=re.S)
+    text=re.sub(r'&#96;&#96;&#96;.*?&#96;&#96;&#96;','',text,flags=re.S)
     for title in re.findall(r'^#{1,6}\s+(.+)$',text,re.M):
         slug=re.sub(r'[^\w -]','',title.lower()).replace(' ','-')
         n=used.get(slug,0);used[slug]=n+1
@@ -7682,14 +7684,14 @@ def main():
         markdown=list(ROOT.rglob('*.md'));stats['markdown_files']=len(markdown)
         for p in markdown:
             text=p.read_text(); rel=p.relative_to(ROOT)
-            if text.count('```')%2:fail('MARKDOWN_FENCE',str(rel))
-            for raw in re.findall(r'(?<!!)\[[^\]]*\]\(([^)]+)\)',text):
-                target=raw.strip('<>');u=urlsplit(target)
+            if text.count('&#96;&#96;&#96;')%2:fail('MARKDOWN_FENCE',str(rel))
+            for raw in re.findall(r'(?&lt;!!)\[[^\]]*\]\(([^)]+)\)',text):
+                target=raw.strip('&lt;&gt;');u=urlsplit(target)
                 if u.scheme or u.netloc:continue
                 dest=(p.parent/unquote(u.path)).resolve() if u.path else p
-                if not dest.is_relative_to(ROOT):fail('LINK_ESCAPE',str(rel)+' -> '+raw);continue
-                if not dest.is_file():fail('LOCAL_LINK',str(rel)+' -> '+raw);continue
-                if u.fragment and dest.suffix=='.md' and unquote(u.fragment) not in anchors(dest.read_text()):fail('ANCHOR',str(rel)+' -> '+raw)
+                if not dest.is_relative_to(ROOT):fail('LINK_ESCAPE',str(rel)+' -&gt; '+raw);continue
+                if not dest.is_file():fail('LOCAL_LINK',str(rel)+' -&gt; '+raw);continue
+                if u.fragment and dest.suffix=='.md' and unquote(u.fragment) not in anchors(dest.read_text()):fail('ANCHOR',str(rel)+' -&gt; '+raw)
         for d in docs['documents']:
             p=ROOT/d['path'];text=p.read_text()
             if not text.startswith('---\n'):fail('METADATA',d['path']);continue
@@ -7750,7 +7752,7 @@ def main():
 
 if __name__=='__main__':
     sys.exit(main())
-````
+</code></pre>
 
 
 ---
